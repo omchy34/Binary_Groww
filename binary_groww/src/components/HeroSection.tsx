@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const WORDS = ["Websites.", "Mobile Apps.", "Brands.", "Experiences."];
 
-export default function Hero(): JSX.Element {
+export default function Hero(): React.JSX.Element {
   const [idx, setIdx] = useState(0);
   const [shown, setShown] = useState("");
   const [deleting, setDeleting] = useState(false);

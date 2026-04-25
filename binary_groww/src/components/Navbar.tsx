@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 interface NavLink { label: string; href: string; }
 
@@ -10,7 +10,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Contact",  href: "#contact" },
 ];
 
-export default function Navbar(): JSX.Element {
+export default function Navbar(): React.JSX.Element {
   const [scrolled, setScrolled]     = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("");
