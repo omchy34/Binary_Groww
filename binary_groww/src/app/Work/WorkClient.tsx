@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import Testimonials from "../Testimonials/page";
+
 
 
 type Category = "All" | "Web" | "App" | "Branding" | "Marketing";
@@ -52,6 +52,32 @@ const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/image.png", // ← replace with: "/work/english-center.png"
     browserTags: ["Admin Panel", "Gallery", "Courses", "Videos", "Enquiry"],
+    ctaLabel: "Visit site",
+    ctaSecondary: "Start similar",
+  },
+  {
+    id: "02",
+    title: "Dekuli mandir",
+    client: "Sachin jha",
+    category: "Web",
+    industry: "Temple",
+    desc: "Full-stack tuition platform with admin panel, dynamic gallery & enquiry system — delivered in just one week.",
+    stack: ["Next.js", "Tailwind", "Node.js", "MongoDB"],
+    features: ["Admin panel", "Gallery", "events", "Enquiry"],
+    stats: [
+      { label: "Delivered", value: "1 Wk" },
+      { label: "Pages", value: "8+" },
+      { label: "Features", value: "5" },
+    ],
+    link: "https://dekulimandir.com/",
+    urlLabel: "dekulimandir.com",
+    accent: "#a78bfa",
+    accentSoft: "rgba(167,139,250,0.07)",
+    accentGlow: "rgba(124,58,237,0.25)",
+    accentBorder: "rgba(167,139,250,0.14)",
+    featured: true,
+    thumbnail: "/image02.png", // ← replace with: "/work/english-center.png"
+    browserTags: ["Admin Panel", "Gallery", "Events", "Enquiry"],
     ctaLabel: "Visit site",
     ctaSecondary: "Start similar",
   },
@@ -423,7 +449,16 @@ export default function WorkClient(): React.JSX.Element {
         .wk-filter.active { border-color: rgba(167,139,250,0.45); background: rgba(167,139,250,0.12); color: #a78bfa; }
 
         /* single centered card */
-        .wk-single { max-width: 540px; margin: 0 auto 48px; }
+        .wk-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+          margin-bottom: 48px;
+        }
+
+        @media (max-width: 640px) {
+          .wk-grid { grid-template-columns: 1fr; }
+        }
 
         .wk-count {
           text-align: center;
@@ -521,7 +556,7 @@ export default function WorkClient(): React.JSX.Element {
           </div>
 
           {/* Single centered card */}
-          <div className="wk-single">
+          <div className="wk-grid">
             {filtered.map((p, i) => (
               <ProjectCard key={p.id} project={p} index={i} />
             ))}
@@ -529,7 +564,6 @@ export default function WorkClient(): React.JSX.Element {
         </div>
       </section>
       <div className="wk-divider" />
-      <Testimonials/>
     </>
   );
 }

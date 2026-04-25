@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <>
     <HeroSection/>
+    <Work/>
     <Services/>
     <Testimonials/>
-    <Work/>
     </>
   );
 }
