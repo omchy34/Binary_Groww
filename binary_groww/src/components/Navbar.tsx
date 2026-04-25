@@ -1,12 +1,13 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 interface NavLink { label: string; href: string; }
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Services", href: "#services" },
-  { label: "Work",     href: "#work" },
-  { label: "About",    href: "#about" },
+  { label: "Services", href: "/Services" },
+  { label: "Work",     href: "/#work" },
+  { label: "About",    href: "/About" },
   { label: "Contact",  href: "/Contact" },
 ];
 
@@ -96,22 +97,8 @@ export default function Navbar(): React.JSX.Element {
           text-decoration: none; flex-shrink: 0;
           user-select: none;
         }
-        .nb-logo-mark {
-          width: 34px; height: 34px;
-          background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-          border-radius: 9px;
-          display: flex; align-items: center; justify-content: center;
-          box-shadow: 0 0 18px rgba(124,58,237,0.4), inset 0 1px 0 rgba(255,255,255,0.18);
-          font-family: var(--font-mono);
-          font-size: 11px; font-weight: 500;
-          color: #fff; letter-spacing: -0.5px;
-          flex-shrink: 0;
-          transition: box-shadow 0.3s, transform 0.3s;
-        }
-        .nb-logo:hover .nb-logo-mark {
-          box-shadow: 0 0 30px rgba(124,58,237,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
-          transform: scale(1.06);
-        }
+        
+        
         .nb-logo-text { line-height: 1; }
         .nb-logo-name {
           font-family: var(--font-display);
@@ -286,7 +273,9 @@ export default function Navbar(): React.JSX.Element {
       <nav className={`nb nb-root ${scrolled ? "scrolled" : ""}`}>
         <div className="nb-pill" ref={dropdownRef}>
           <a href="/" className="nb-logo">
-            <div className="nb-logo-mark">&lt;/&gt;</div>
+            <div className="nb-logo-mark">
+              <Image src="/logo.png" alt="Logo" width={35} height={35} />
+            </div>
             <div className="nb-logo-text">
               <div className="nb-logo-name">binary<em>Groww</em></div>
               <span className="nb-logo-sub">// digital agency</span>

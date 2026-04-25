@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Syne, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const syne = Syne({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-[#050505] text-white antialiased">
         <Navbar/>
         {children}
+        <Footer/>
         </body>
     </html>
   )
