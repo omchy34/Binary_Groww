@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   weight: ['300', '400', '500'],
 })
 
-const BASE_URL = 'https://binarygroww.com' // ← change to your actual domain
+const BASE_URL = 'https://binary-groww.vercel.app'
 
 export const viewport: Viewport = {
   themeColor: '#7c3aed',
