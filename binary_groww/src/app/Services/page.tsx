@@ -16,7 +16,7 @@ const SERVICES = [
     short: "Pixel-perfect sites that convert",
     desc: "We craft fast, responsive websites engineered for performance and built to rank. From landing pages to full-scale web apps — every pixel is intentional.",
     tags: ["Next.js", "React", "Webflow", "SEO"],
-    stat: "50+ sites shipped",
+    stat: "5+ sites shipped",
     color: "purple",
   },
   {
@@ -31,8 +31,8 @@ const SERVICES = [
     title: "Mobile App Development",
     short: "Native-feel apps for iOS & Android",
     desc: "Cross-platform apps that feel native. We ship React Native and Flutter solutions with smooth UX, tight performance, and App Store polish.",
-    tags: ["React Native", "Flutter", "iOS", "Android"],
-    stat: "15+ apps live",
+    tags: ["React Native", "iOS", "Android"],
+    stat: "5+ apps live",
     color: "violet",
   },
   {
@@ -47,7 +47,7 @@ const SERVICES = [
     short: "Brands people remember",
     desc: "Logo, color systems, typography, brand guidelines — we build identities that are distinctive, consistent, and built to scale across every touchpoint.",
     tags: ["Logo Design", "Style Guide", "Typography", "UI Kit"],
-    stat: "30+ brands built",
+    stat: "3+ brands built",
     color: "indigo",
   },
   {

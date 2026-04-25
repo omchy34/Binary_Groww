@@ -1,13 +1,13 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-
+import Link from "next/link";
 interface NavLink { label: string; href: string; }
 
 const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "#services" },
   { label: "Work",     href: "#work" },
   { label: "About",    href: "#about" },
-  { label: "Contact",  href: "#contact" },
+  { label: "Contact",  href: "/Contact" },
 ];
 
 export default function Navbar(): React.JSX.Element {
@@ -295,14 +295,14 @@ export default function Navbar(): React.JSX.Element {
 
           <div className="nb-links">
             {NAV_LINKS.map((l) => (
-              <a
+              <Link
                 key={l.label}
                 href={l.href}
                 className={`nb-link ${activeLink === l.href ? "active" : ""}`}
                 onClick={() => setActiveLink(l.href)}
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
           </div>
 

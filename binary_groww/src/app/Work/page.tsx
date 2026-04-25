@@ -524,25 +524,6 @@ export default function Work(): React.JSX.Element {
               <ProjectCard key={p.id} project={p} index={i} />
             ))}
           </div>
-
-          <div className="wk-count">// 1 of 50+ projects delivered — more case studies coming soon</div>
-
-          <div className="wk-cta">
-            <div>
-              <div className="wk-cta-heading">Ready to be our next case study?</div>
-              <div className="wk-cta-sub">Let's build something that actually moves the needle for your business.</div>
-            </div>
-            <div className="wk-cta-btns">
-              <a href="#contact" className="wk-btn-primary">
-                Start a project
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-                  <path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-              <a href="#services" className="wk-btn-ghost">See our services</a>
-            </div>
-          </div>
-
         </div>
       </section>
 

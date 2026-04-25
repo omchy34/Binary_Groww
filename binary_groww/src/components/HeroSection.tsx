@@ -544,10 +544,10 @@ export default function Hero(): React.JSX.Element {
             {/* Stats */}
             <div className="h-stats">
               {[
-                { n: "50", u: "+", l: "Projects delivered" },
-                { n: "30", u: "+", l: "Happy clients" },
+                { n: "10", u: "+", l: "Projects delivered" },
+                { n: "7", u: "+", l: "Happy clients" },
                 { n: "100", u: "%", l: "On-time rate" },
-                { n: "3", u: "+", l: "Years building" },
+                { n: "2", u: "+", l: "Years building" },
               ].map(({ n, u, l }) => (
                 <div key={l} className="h-stat">
                   <div className="h-stat-n">{n}<em>{u}</em></div>
