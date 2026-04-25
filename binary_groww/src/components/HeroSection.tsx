@@ -1,7 +1,12 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 
-const WORDS = ["Websites.", "Mobile Apps.", "Brands.", "Experiences."];
+const WORDS = [
+  { text: "Websites.", color: "#22d3ee" },  // cyan
+  { text: "Mobile Apps.", color: "#f97316" }, // orange
+  { text: "Brands.", color: "#a855f7" },  // purple
+  { text: "Experiences.", color: "#f43f5e" }, // pink-red
+]
 
 export default function Hero(): React.JSX.Element {
   const [idx, setIdx] = useState(0);
@@ -14,7 +19,7 @@ export default function Hero(): React.JSX.Element {
   useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
-    const word = WORDS[idx];
+    const word = WORDS[idx].text;
     let t: ReturnType<typeof setTimeout>;
     if (!deleting && shown.length < word.length)
       t = setTimeout(() => setShown(word.slice(0, shown.length + 1)), 75);
@@ -79,8 +84,8 @@ export default function Hero(): React.JSX.Element {
         .h-bg-grid {
           position: absolute; inset: 0; pointer-events: none;
           background-image:
-            linear-gradient(rgba(167,139,250,0.035) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(167,139,250,0.035) 1px, transparent 1px);
+            linear-gradient(rgba(167,139,250,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(167,139,250,0.08) 1px, transparent 1px);
           background-size: 56px 56px;
           mask-image: radial-gradient(ellipse 80% 70% at 50% 36%, black 5%, transparent 100%);
         }
@@ -194,15 +199,14 @@ export default function Hero(): React.JSX.Element {
           color: rgba(226,234,245,0.22);
           font-weight: 600;
         }
-        .h-tw-word { color: var(--accent-warm); }
+       
         .h-cursor {
           display: inline-block;
           width: 2px; height: 0.6em;
-          background: var(--accent-warm);
-          margin-left: 3px;
           vertical-align: middle;
-          border-radius: 2px;
+          margin-left: 3px;
           animation: h-blink 1s step-end infinite;
+          border-radius: 2px;
         }
         @keyframes h-blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
@@ -515,8 +519,10 @@ export default function Hero(): React.JSX.Element {
             {/* Typewriter */}
             <div className="h-typewriter">
               <span className="h-tw-pre">We build </span>
-              <span className="h-tw-word">{shown}</span>
-              <span className="h-cursor" />
+              <span className="h-tw-word" style={{ color: WORDS[idx].color }}>
+                {shown}
+              </span>
+              <span className="h-cursor" style={{ background: WORDS[idx].color }} />
             </div>
 
             {/* Subtext — sentence case, friendly tone */}
@@ -541,7 +547,7 @@ export default function Hero(): React.JSX.Element {
                 { n: "50", u: "+", l: "Projects delivered" },
                 { n: "30", u: "+", l: "Happy clients" },
                 { n: "100", u: "%", l: "On-time rate" },
-                { n: "3",  u: "+", l: "Years building" },
+                { n: "3", u: "+", l: "Years building" },
               ].map(({ n, u, l }) => (
                 <div key={l} className="h-stat">
                   <div className="h-stat-n">{n}<em>{u}</em></div>
@@ -576,13 +582,13 @@ export default function Hero(): React.JSX.Element {
               }}
             >
               <div className="h-card-inner">
-             
-                  <img
-                    src="/main.png"
-                    alt="Founder"
-                    className="h-photo-img"
-                  />
-                 
+
+                <img
+                  src="/main.png"
+                  alt="Founder"
+                  className="h-photo-img"
+                />
+
                 {/* <div className="h-placeholder">
                   <div className="h-ph-ring">
                     <span className="h-ph-init">You</span>
