@@ -58,35 +58,30 @@ export const metadata: Metadata = {
     canonical: '/',
   },
 
-  /* ── Open Graph ── */
-  openGraph: {
-    type: 'website',
-    locale: 'en_IN',
-    url: BASE_URL,
-    siteName: 'binaryGroww',
-    title: 'binaryGroww — Web & App Development Agency',
-    description:
-      'We build sleek websites, powerful mobile apps, SaaS platforms, and e-commerce solutions. Based in Durgapur, India — serving clients worldwide.',
-    images: [
-      {
-        url: '/og-image.png',   // place a 1200×630 image at /public/og-image.png
-        width: 1200,
-        height: 630,
-        alt: 'binaryGroww — Web & App Development Agency',
-        type: 'image/png',
-      },
-    ],
-  },
+openGraph: {
+  type: 'website',
+  locale: 'en_IN',
+  url: BASE_URL,
+  siteName: 'binaryGroww',
+  title: 'binaryGroww — Web & App Development Agency',
+  description: 'We build sleek websites, powerful mobile apps, SaaS platforms, and e-commerce solutions. Based in Durgapur, India — serving clients worldwide.',
+  images: [
+    {
+      url: `${BASE_URL}/og-image.png`,  // ← absolute URL
+      width: 1200,
+      height: 630,
+      alt: 'binaryGroww — Web & App Development Agency',
+      type: 'image/png',
+    },
+  ],
+},
 
-  /* ── Twitter / X ── */
-  twitter: {
-    card: 'summary_large_image',
-    title: 'binaryGroww — Web & App Development Agency',
-    description:
-      'We build sleek websites, powerful mobile apps, SaaS platforms, and e-commerce solutions. Based in Durgapur, India — serving clients worldwide.',
-    images: ['/og-image.png'],
-    // creator: '@yourtwitterhandle',  // ← uncomment & fill when you have one
-  },
+twitter: {
+  card: 'summary_large_image',
+  title: 'binaryGroww — Web & App Development Agency',
+  description: 'We build sleek websites, powerful mobile apps, SaaS platforms, and e-commerce solutions. Based in Durgapur, India — serving clients worldwide.',
+  images: [`${BASE_URL}/og-image.png`],  // ← absolute URL
+},
 
   /* ── Favicon / App icons ── */
   icons: {
