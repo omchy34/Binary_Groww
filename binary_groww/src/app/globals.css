@@ -1,0 +1,81 @@
+@import "tailwindcss";
+/* 
+:root {
+  --accent: #CCFF00;
+  --accent-dim: rgba(204, 255, 0, 0.12);
+  --accent-glow: rgba(204, 255, 0, 0.35);
+  --surface: #0D0D0D;
+  --surface-2: #141414;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-accent: rgba(204, 255, 0, 0.2);
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+@keyframes binary-fall {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+ 
+@keyframes scan-line {
+  0%, 100% { transform: translateY(-100%); }
+  50%       { transform: translateY(200%); }
+}
+ 
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 0.6; }
+  70%  { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(0.9); opacity: 0; }
+}
+ 
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+ 
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+ 
+.animate-slide-up   { animation: slide-up 0.7s ease-out forwards; }
+.animate-fade-in    { animation: fade-in 0.6s ease-out forwards; }
+.animate-float      { animation: float 4s ease-in-out infinite; }
+.animate-scan-line  { animation: scan-line 4s ease-in-out infinite; }
+.animate-pulse-ring { animation: pulse-ring 2.5s ease-out infinite; }
+ 
+.delay-100  { animation-delay: 0.1s; }
+.delay-200  { animation-delay: 0.2s; }
+.delay-300  { animation-delay: 0.3s; }
+.delay-400  { animation-delay: 0.4s; }
+.delay-500  { animation-delay: 0.5s; }
+.delay-600  { animation-delay: 0.6s; }
+.delay-700  { animation-delay: 0.7s; }
+ 
+.opacity-0-init { opacity: 0; }
+  */
+
+  /* .h-typewriter {
+          font-family: 'Syne', sans-serif;
+          font-size: clamp(46px, 5.8vw, 74px);
+          font-weight: 800;
+          line-height: 1.0;
+          letter-spacing: -0.03em;
+          color: #fff;
+          min-height: 1.05em;
+          margin-bottom: 32px;
+          animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both;
+        } */
