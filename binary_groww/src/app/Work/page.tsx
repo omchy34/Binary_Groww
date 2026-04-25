@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+import Testimonials from "../Testimonials/page";
 
 type Category = "All" | "Web" | "App" | "Branding" | "Marketing";
 
@@ -526,8 +527,8 @@ export default function Work(): React.JSX.Element {
           </div>
         </div>
       </section>
-
       <div className="wk-divider" />
+      <Testimonials/>
     </>
   );
 }
