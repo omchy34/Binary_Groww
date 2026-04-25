@@ -5,10 +5,10 @@ import Image from "next/image";
 interface NavLink { label: string; href: string; }
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Services", href: "/Services" },
-  { label: "Work",     href: "/Work" },
-  { label: "About",    href: "/About" },
-  { label: "Contact",  href: "/Contact" },
+  { label: "Services", href: "Services" },
+  { label: "Work",     href: "Work" },
+  { label: "About",    href: "About" },
+  { label: "Contact",  href: "Contact" },
 ];
 
 export default function Navbar(): React.JSX.Element {
