@@ -6,7 +6,7 @@ interface NavLink { label: string; href: string; }
 
 const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "/Services" },
-  { label: "Work",     href: "/#work" },
+  { label: "Work",     href: "/Work" },
   { label: "About",    href: "/About" },
   { label: "Contact",  href: "/Contact" },
 ];
@@ -296,12 +296,12 @@ export default function Navbar(): React.JSX.Element {
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <a href="#contact" className="nb-cta">
+            <Link href="/Contact" className="nb-cta">
               Let&apos;s Build
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
+            </Link>
             <button className="nb-ham" onClick={() => setMobileOpen((o) => !o)} aria-label="Toggle menu">
               <span className="nb-ham-bar" style={mobileOpen ? { transform: "rotate(45deg) translate(4.5px, 4.5px)" } : {}} />
               <span className="nb-ham-bar" style={mobileOpen ? { opacity: 0, transform: "scaleX(0)" } : {}} />
