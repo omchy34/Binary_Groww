@@ -474,7 +474,7 @@ export default function Hero(): React.JSX.Element {
         @media (max-width: 940px) {
           .h-inner {
             grid-template-columns: 1fr;
-            gap: 56px; padding: 44px 24px 80px;
+            gap: 0px; padding: 0px 24px 80px;
           }
           .h-right { order: -1; max-width: 300px; margin: 0 auto; width: 100%; }
           .h-badge-float.h-bf-top { right: -8px; }
