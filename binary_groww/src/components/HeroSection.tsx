@@ -342,7 +342,7 @@ export default function Hero(): React.JSX.Element {
             
             position: absolute;
             /* Start well inside the photo so gradient covers faces softly */
-            bottom: -20px;   /* -1px so it sits flush with card bottom edge */
+            bottom: -30px;   /* -1px so it sits flush with card bottom edge */
             left: 0;
             right: 0;
             /* Extend BELOW the card into the stats area */
