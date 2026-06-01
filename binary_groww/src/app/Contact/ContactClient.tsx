@@ -28,12 +28,43 @@ export default function Contact(): React.JSX.Element {
 
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    setSending(true);
-    await new Promise(r => setTimeout(r, 1600));
-    setSending(false);
-    setSent(true);
-  };
 
+    // Basic client-side guard
+    if (!form.name || !form.email || !form.message) {
+      alert('Please fill in your name, email, and message.');
+      return;
+    }
+
+    setSending(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSent(true);
+      } else {
+        console.error('API response:', data); // ← add this
+        alert(typeof data.error === 'string' ? data.error : JSON.stringify(data.error));
+      }
+
+
+      if (res.ok) {
+        setSent(true);
+      } else {
+        alert(typeof data.error === 'string' ? data.error : 'Something went wrong. Please try again.');
+      }
+    } catch {
+      alert('Network error. Please try again.');
+    } finally {
+      setSending(false);
+    }
+  };
   const MAP_EMBED = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Sanaka+Educational+Trust+Group+of+Institutions,Malandighi,Durgapur,West+Bengal&zoom=15`;
 
 
