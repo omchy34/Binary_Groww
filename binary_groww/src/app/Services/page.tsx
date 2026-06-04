@@ -5,7 +5,7 @@ const SERVICES = [
   {
     id: "01",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
         <rect x="2" y="2" width="9" height="9" rx="2" stroke="currentColor" strokeWidth="1.5"/>
         <rect x="15" y="2" width="9" height="9" rx="2" stroke="currentColor" strokeWidth="1.5"/>
         <rect x="2" y="15" width="9" height="9" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -14,15 +14,13 @@ const SERVICES = [
     ),
     title: "Web Design & Development",
     short: "Pixel-perfect sites that convert",
-    desc: "We craft fast, responsive websites engineered for performance and built to rank. From landing pages to full-scale web apps — every pixel is intentional.",
+    desc: "Fast, responsive websites built to rank and convert — from landing pages to full-scale web apps.",
     tags: ["Next.js", "React", "Webflow", "SEO"],
-    stat: "5+ sites shipped",
-    color: "purple",
   },
   {
     id: "02",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
         <rect x="7" y="1" width="12" height="24" rx="3" stroke="currentColor" strokeWidth="1.5"/>
         <circle cx="13" cy="20" r="1.2" fill="currentColor"/>
         <path d="M10 5h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -30,30 +28,26 @@ const SERVICES = [
     ),
     title: "Mobile App Development",
     short: "Native-feel apps for iOS & Android",
-    desc: "Cross-platform apps that feel native. We ship React Native and Flutter solutions with smooth UX, tight performance, and App Store polish.",
+    desc: "Cross-platform apps with smooth UX, tight performance, and App Store polish.",
     tags: ["React Native", "iOS", "Android"],
-    stat: "5+ apps live",
-    color: "violet",
   },
   {
     id: "03",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
         <path d="M13 3L4 7v6c0 5 4 9 9 10 5-1 9-5 9-10V7L13 3z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
         <path d="M9 13l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
     title: "Brand Identity",
     short: "Brands people remember",
-    desc: "Logo, color systems, typography, brand guidelines — we build identities that are distinctive, consistent, and built to scale across every touchpoint.",
-    tags: ["Logo Design", "Style Guide", "Typography", "UI Kit"],
-    stat: "3+ brands built",
-    color: "indigo",
+    desc: "Logo, color systems, typography, and brand guidelines built to scale across every touchpoint.",
+    tags: ["Logo Design", "Style Guide", "Typography"],
   },
   {
     id: "04",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
         <path d="M3 17l5-5 4 4 5-6 6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         <circle cx="20" cy="6" r="3" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M20 9v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -61,15 +55,13 @@ const SERVICES = [
     ),
     title: "Digital Marketing",
     short: "Growth that compounds",
-    desc: "SEO, paid ads, social strategy, and analytics — we run data-driven campaigns that bring the right traffic and turn visitors into paying customers.",
-    tags: ["SEO", "Google Ads", "Meta Ads", "Analytics"],
-    stat: "3× avg. ROI",
-    color: "teal",
+    desc: "SEO, paid ads, and analytics — campaigns that bring the right traffic and turn visitors into customers.",
+    tags: ["SEO", "Google Ads", "Meta Ads"],
   },
   {
-    id: "06",
+    id: "05",
     icon: (
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
         <rect x="2" y="6" width="22" height="14" rx="3" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M9 11l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M13 20v3M9 23h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -77,68 +69,18 @@ const SERVICES = [
     ),
     title: "Maintenance & Support",
     short: "We stay after launch",
-    desc: "Performance monitoring, security patches, feature iterations — we don't disappear post-launch. Your product is always fast, secure, and improving.",
-    tags: ["Uptime", "Updates", "Hosting", "Reporting"],
-    stat: "24hr response SLA",
-    color: "green",
+    desc: "Performance monitoring, security patches, and feature updates — we don't disappear post-launch.",
+    tags: ["Uptime", "Updates", "Hosting"],
   },
 ];
-
-const COLOR_MAP: Record<string, { icon: string; accent: string; glow: string; tag: string; tagBorder: string; line: string }> = {
-  purple: {
-    icon: "rgba(167,139,250,0.12)",
-    accent: "#a78bfa",
-    glow: "rgba(124,58,237,0.22)",
-    tag: "rgba(167,139,250,0.08)",
-    tagBorder: "rgba(167,139,250,0.2)",
-    line: "rgba(167,139,250,0.5)",
-  },
-  violet: {
-    icon: "rgba(139,92,246,0.12)",
-    accent: "#8b5cf6",
-    glow: "rgba(109,40,217,0.2)",
-    tag: "rgba(139,92,246,0.08)",
-    tagBorder: "rgba(139,92,246,0.2)",
-    line: "rgba(139,92,246,0.5)",
-  },
-  indigo: {
-    icon: "rgba(99,102,241,0.12)",
-    accent: "#818cf8",
-    glow: "rgba(79,70,229,0.2)",
-    tag: "rgba(99,102,241,0.08)",
-    tagBorder: "rgba(99,102,241,0.2)",
-    line: "rgba(99,102,241,0.5)",
-  },
-  teal: {
-    icon: "rgba(20,184,166,0.12)",
-    accent: "#2dd4bf",
-    glow: "rgba(13,148,136,0.2)",
-    tag: "rgba(20,184,166,0.08)",
-    tagBorder: "rgba(20,184,166,0.2)",
-    line: "rgba(20,184,166,0.5)",
-  },
-  amber: {
-    icon: "rgba(251,191,36,0.1)",
-    accent: "#fbbf24",
-    glow: "rgba(217,119,6,0.18)",
-    tag: "rgba(251,191,36,0.08)",
-    tagBorder: "rgba(251,191,36,0.2)",
-    line: "rgba(251,191,36,0.5)",
-  },
-  green: {
-    icon: "rgba(34,197,94,0.1)",
-    accent: "#4ade80",
-    glow: "rgba(22,163,74,0.18)",
-    tag: "rgba(34,197,94,0.08)",
-    tagBorder: "rgba(34,197,94,0.2)",
-    line: "rgba(34,197,94,0.5)",
-  },
-};
 
 function useInView(ref: React.RefObject<Element>, threshold = 0.15) {
   const [inView, setInView] = useState(false);
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setInView(true); }, { threshold });
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) setInView(true); },
+      { threshold }
+    );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, [ref, threshold]);
@@ -149,7 +91,6 @@ function ServiceCard({ svc, index }: { svc: typeof SERVICES[0]; index: number })
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref as React.RefObject<Element>);
-  const c = COLOR_MAP[svc.color];
 
   return (
     <div
@@ -159,59 +100,96 @@ function ServiceCard({ svc, index }: { svc: typeof SERVICES[0]; index: number })
       onMouseLeave={() => setHovered(false)}
       style={{
         opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(36px)",
-        transition: `opacity 0.65s cubic-bezier(0.16,1,0.3,1) ${index * 0.08}s, transform 0.65s cubic-bezier(0.16,1,0.3,1) ${index * 0.08}s`,
-        boxShadow: hovered ? `0 0 0 1px ${c.accent}33, 0 20px 56px rgba(0,0,0,0.45), 0 0 40px ${c.glow}` : undefined,
+        transform: inView ? "translateY(0)" : "translateY(32px)",
+        transition: `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${index * 0.07}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${index * 0.07}s, border-color 0.3s, box-shadow 0.3s, background 0.3s`,
+        borderColor: hovered ? "rgba(245,158,11,0.35)" : "rgba(245,158,11,0.1)",
+        background: hovered ? "#110f00" : "#0d0b00",
+        boxShadow: hovered ? "0 0 0 1px rgba(245,158,11,0.1), 0 20px 48px rgba(0,0,0,0.45), 0 0 32px rgba(217,119,6,0.15)" : "none",
       }}
     >
-      {/* top line accent */}
-      <div className="svc-card-line" style={{ background: hovered ? c.accent : "transparent", transition: "background 0.3s" }} />
+      {/* top accent line */}
+      <div style={{
+        position: "absolute", top: 0, left: 0, right: 0, height: "2px",
+        borderRadius: "16px 16px 0 0",
+        background: hovered ? "linear-gradient(90deg, #f59e0b, transparent)" : "transparent",
+        transition: "background 0.35s",
+      }} />
 
-      {/* header row */}
-      <div className="svc-card-head">
-        <div className="svc-icon" style={{ background: hovered ? c.icon : "rgba(255,255,255,0.04)", color: hovered ? c.accent : "rgba(245,243,255,0.35)", boxShadow: hovered ? `0 0 20px ${c.glow}` : "none", transition: "all 0.35s cubic-bezier(0.16,1,0.3,1)" }}>
+      {/* icon + id row */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+        <div style={{
+          width: 44, height: 44, borderRadius: 11,
+          display: "flex", alignItems: "center", justifyContent: "center",
+          background: hovered ? "rgba(245,158,11,0.1)" : "rgba(255,255,255,0.04)",
+          border: `1px solid ${hovered ? "rgba(245,158,11,0.25)" : "rgba(255,255,255,0.06)"}`,
+          color: hovered ? "#f59e0b" : "rgba(254,252,232,0.3)",
+          boxShadow: hovered ? "0 0 18px rgba(217,119,6,0.2)" : "none",
+          transition: "all 0.35s",
+          flexShrink: 0,
+        }}>
           {svc.icon}
         </div>
-        <span className="svc-id">// {svc.id}</span>
+        <span style={{
+          fontFamily: "'DM Mono', monospace", fontSize: 9,
+          letterSpacing: "0.12em", color: "rgba(254,252,232,0.15)",
+        }}>
+          {svc.id}
+        </span>
       </div>
 
       {/* title */}
-      <div className="svc-title" style={{ color: hovered ? "#f5f3ff" : "rgba(226,234,245,0.82)" }}>
+      <div style={{
+        fontFamily: "'Bricolage Grotesque', sans-serif",
+        fontSize: 16, fontWeight: 700, letterSpacing: "-0.02em",
+        color: hovered ? "#fefce8" : "rgba(254,252,232,0.82)",
+        marginBottom: 4, lineHeight: 1.3,
+        transition: "color 0.3s",
+      }}>
         {svc.title}
       </div>
-      <div className="svc-short" style={{ color: hovered ? c.accent : "rgba(226,234,245,0.28)" }}>
-        {svc.short}
+
+      {/* short tagline */}
+      <div style={{
+        fontFamily: "'DM Mono', monospace", fontSize: 9,
+        letterSpacing: "0.07em",
+        color: hovered ? "#f59e0b" : "rgba(254,252,232,0.25)",
+        marginBottom: 16,
+        transition: "color 0.3s",
+      }}>
+        — {svc.short}
       </div>
 
       {/* divider */}
-      <div className="svc-divider" style={{ background: hovered ? `${c.accent}28` : "rgba(255,255,255,0.06)" }} />
+      <div style={{
+        height: 1, marginBottom: 14,
+        background: hovered ? "rgba(245,158,11,0.18)" : "rgba(255,255,255,0.05)",
+        transition: "background 0.35s",
+      }} />
 
-      {/* description */}
-      <p className="svc-desc">{svc.desc}</p>
+      {/* desc */}
+      <p style={{
+        fontFamily: "'Inter', sans-serif",
+        fontSize: 13, color: "rgba(254,252,232,0.45)",
+        lineHeight: 1.75, margin: "0 0 18px", flex: 1,
+      }}>
+        {svc.desc}
+      </p>
 
       {/* tags */}
-      <div className="svc-tags">
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
         {svc.tags.map((t) => (
-          <span key={t} className="svc-tag" style={{ background: hovered ? c.tag : "rgba(255,255,255,0.03)", borderColor: hovered ? c.tagBorder : "rgba(255,255,255,0.07)", color: hovered ? c.accent : "rgba(226,234,245,0.32)" }}>
+          <span key={t} style={{
+            fontFamily: "'DM Mono', monospace", fontSize: 9,
+            letterSpacing: "0.06em",
+            padding: "3px 9px", borderRadius: 100,
+            background: hovered ? "rgba(245,158,11,0.07)" : "rgba(255,255,255,0.03)",
+            border: `1px solid ${hovered ? "rgba(245,158,11,0.22)" : "rgba(255,255,255,0.07)"}`,
+            color: hovered ? "#f59e0b" : "rgba(254,252,232,0.28)",
+            transition: "all 0.3s",
+          }}>
             {t}
           </span>
         ))}
-      </div>
-
-      {/* footer */}
-      <div className="svc-foot">
-        <span className="svc-stat" style={{ color: hovered ? c.accent : "rgba(226,234,245,0.25)" }}>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ display: "inline", marginRight: 5, verticalAlign: "middle" }}>
-            <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.2"/>
-            <path d="M6 3.5V6l1.5 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
-          </svg>
-          {svc.stat}
-        </span>
-        <span className="svc-arrow" style={{ color: hovered ? c.accent : "rgba(226,234,245,0.15)", transform: hovered ? "translateX(4px)" : "translateX(0)", transition: "all 0.28s" }}>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
       </div>
     </div>
   );
@@ -227,16 +205,14 @@ export default function Services(): React.JSX.Element {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap');
 
         .sv-root {
-          --bg: #08080f;
-          --bg2: #0d0d1c;
-          --bg3: #10101e;
-          --accent: #a78bfa;
-          --accent2: #7c3aed;
-          --accent3: #c4b5fd;
-          --text: #f5f3ff;
-          --text2: rgba(245,243,255,0.55);
-          --text3: rgba(245,243,255,0.22);
-          --border: rgba(167,139,250,0.1);
+          --bg: #0a0800;
+          --bg2: #0d0b00;
+          --accent: #f59e0b;
+          --accent2: #d97706;
+          --accent3: #fcd34d;
+          --text: #fefce8;
+          --text2: rgba(254,252,232,0.52);
+          --text3: rgba(254,252,232,0.2);
           --font-display: 'Bricolage Grotesque', sans-serif;
           --font-body: 'Inter', sans-serif;
           --font-mono: 'DM Mono', monospace;
@@ -245,275 +221,176 @@ export default function Services(): React.JSX.Element {
         .sv-wrap {
           position: relative;
           background: var(--bg);
-          padding: 120px 0 140px;
+          padding: 110px 0 130px;
           overflow: hidden;
         }
 
-        /* bg */
         .sv-bg-grid {
           position: absolute; inset: 0; pointer-events: none;
           background-image:
-            linear-gradient(rgba(167,139,250,0.028) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(167,139,250,0.028) 1px, transparent 1px);
+            linear-gradient(rgba(245,158,11,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,158,11,0.05) 1px, transparent 1px);
           background-size: 56px 56px;
           mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black, transparent);
         }
         .sv-glow-l {
           position: absolute; pointer-events: none;
-          width: 600px; height: 600px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(124,58,237,0.09) 0%, transparent 70%);
+          width: 560px; height: 560px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(217,119,6,0.1) 0%, transparent 70%);
           top: -100px; left: -200px;
         }
         .sv-glow-r {
           position: absolute; pointer-events: none;
-          width: 500px; height: 500px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(196,181,253,0.05) 0%, transparent 70%);
+          width: 460px; height: 460px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%);
           bottom: 0; right: -150px;
         }
 
-        /* inner */
         .sv-inner {
           position: relative; z-index: 2;
-          max-width: 1240px; margin: 0 auto;
+          max-width: 1160px; margin: 0 auto;
           padding: 0 48px;
         }
 
-        /* header */
-        .sv-header {
-          text-align: center;
-          margin-bottom: 72px;
-        }
+        .sv-header { text-align: center; margin-bottom: 68px; }
+
         .sv-badge {
           display: inline-flex; align-items: center; gap: 8px;
-          background: rgba(167,139,250,0.07);
-          border: 1px solid rgba(167,139,250,0.15);
+          background: rgba(245,158,11,0.07);
+          border: 1px solid rgba(245,158,11,0.16);
           border-radius: 100px;
           padding: 5px 16px 5px 10px;
-          margin-bottom: 24px;
+          margin-bottom: 22px;
         }
         .sv-badge-dot {
           width: 6px; height: 6px; border-radius: 50%;
-          background: var(--accent);
-          box-shadow: 0 0 8px rgba(167,139,250,0.8);
+          background: #f59e0b;
+          box-shadow: 0 0 8px rgba(245,158,11,0.8);
           animation: sv-pulse 2.4s ease-in-out infinite;
-          flex-shrink: 0;
         }
         @keyframes sv-pulse {
-          0%,100% { box-shadow: 0 0 5px rgba(167,139,250,0.6); }
-          50%      { box-shadow: 0 0 14px rgba(167,139,250,1), 0 0 28px rgba(167,139,250,0.3); }
+          0%,100% { box-shadow: 0 0 5px rgba(245,158,11,0.6); }
+          50%      { box-shadow: 0 0 14px rgba(245,158,11,1), 0 0 28px rgba(245,158,11,0.3); }
         }
         .sv-badge-txt {
-          font-family: var(--font-mono);
-          font-size: 10px; letter-spacing: 0.08em;
-          color: rgba(167,139,250,0.72);
+          font-family: var(--font-mono); font-size: 10px;
+          letter-spacing: 0.08em; color: rgba(245,158,11,0.72);
         }
 
         .sv-h2 {
           font-family: var(--font-display);
-          font-size: clamp(30px, 3.5vw, 52px);
-          font-weight: 800;
-          letter-spacing: -0.03em;
-          line-height: 1.1;
-          color: var(--text);
-          margin-bottom: 18px;
+          font-size: clamp(28px, 3.5vw, 50px);
+          font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+          color: var(--text); margin-bottom: 16px;
         }
         .sv-h2 em {
           font-style: normal;
-          background: linear-gradient(118deg, #c4b5fd 0%, #a78bfa 50%, #7c3aed 100%);
+          background: linear-gradient(118deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
           background-clip: text;
         }
-
         .sv-sub {
-          font-family: var(--font-body);
-          font-size: 16px; color: var(--text2);
-          line-height: 1.8; max-width: 540px;
-          margin: 0 auto;
+          font-family: var(--font-body); font-size: 15px;
+          color: var(--text2); line-height: 1.8;
+          max-width: 500px; margin: 0 auto;
         }
 
-        /* grid */
+        /* 3-col grid, wraps to 2, then 1 */
         .sv-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          gap: 18px;
+          margin-bottom: 56px;
         }
 
-        /* card */
+        /* card base */
         .svc-card {
           position: relative;
-          background: var(--bg2);
-          border: 1px solid rgba(167,139,250,0.09);
-          border-radius: 18px;
-          padding: 28px 26px 24px;
+          border: 1px solid rgba(245,158,11,0.1);
+          border-radius: 16px;
+          padding: 24px 22px 22px;
           display: flex; flex-direction: column;
-          cursor: pointer;
           overflow: hidden;
-          transition: border-color 0.35s, box-shadow 0.35s, background 0.35s;
-        }
-        .svc-card:hover {
-          background: #0f0f1e;
-          border-color: transparent;
+          cursor: default;
         }
 
-        .svc-card-line {
-          position: absolute; top: 0; left: 0; right: 0;
-          height: 2px; border-radius: 18px 18px 0 0;
-        }
-
-        .svc-card-head {
-          display: flex; justify-content: space-between; align-items: flex-start;
-          margin-bottom: 18px;
-        }
-
-        .svc-icon {
-          width: 48px; height: 48px; border-radius: 12px;
-          display: flex; align-items: center; justify-content: center;
-          border: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .svc-id {
-          font-family: var(--font-mono);
-          font-size: 10px; letter-spacing: 0.1em;
-          color: rgba(245,243,255,0.18);
-        }
-
-        .svc-title {
-          font-family: var(--font-display);
-          font-size: 17px; font-weight: 700;
-          letter-spacing: -0.02em;
-          line-height: 1.25;
-          margin-bottom: 5px;
-          transition: color 0.3s;
-        }
-        .svc-short {
-          font-family: var(--font-mono);
-          font-size: 10px; letter-spacing: 0.06em;
-          margin-bottom: 18px;
-          transition: color 0.3s;
-        }
-        .svc-divider {
-          height: 1px; margin-bottom: 16px;
-          transition: background 0.35s;
-        }
-        .svc-desc {
-          font-family: var(--font-body);
-          font-size: 13.5px; font-weight: 400;
-          color: var(--text2);
-          line-height: 1.75;
-          margin: 0 0 18px;
-          flex: 1;
-        }
-        .svc-tags {
-          display: flex; flex-wrap: wrap; gap: 7px;
-          margin-bottom: 20px;
-        }
-        .svc-tag {
-          font-family: var(--font-mono);
-          font-size: 10px; letter-spacing: 0.06em;
-          padding: 4px 10px;
-          border-radius: 100px;
-          border: 1px solid;
-          transition: all 0.3s;
-        }
-        .svc-foot {
-          display: flex; justify-content: space-between; align-items: center;
-        }
-        .svc-stat {
-          font-family: var(--font-mono);
-          font-size: 10px; letter-spacing: 0.06em;
-          transition: color 0.3s;
-        }
-
-        /* bottom CTA strip */
+        /* bottom CTA */
         .sv-cta {
-          margin-top: 64px;
-          border: 1px solid rgba(167,139,250,0.12);
-          border-radius: 20px;
-          background: linear-gradient(135deg, rgba(124,58,237,0.07) 0%, rgba(13,13,28,0.6) 60%);
-          padding: 44px 48px;
+          border: 1px solid rgba(245,158,11,0.12);
+          border-radius: 18px;
+          background: linear-gradient(135deg, rgba(217,119,6,0.07) 0%, rgba(17,15,0,0.55) 60%);
+          padding: 36px 40px;
           display: flex; align-items: center; justify-content: space-between;
-          gap: 32px; flex-wrap: wrap;
+          gap: 24px; flex-wrap: wrap;
           position: relative; overflow: hidden;
         }
         .sv-cta::before {
           content: '';
           position: absolute; top: -1px; left: -1px;
-          width: 80px; height: 80px;
-          border-top: 1.5px solid rgba(167,139,250,0.5);
-          border-left: 1.5px solid rgba(167,139,250,0.5);
-          border-radius: 20px 0 0 0;
+          width: 64px; height: 64px;
+          border-top: 1.5px solid rgba(245,158,11,0.45);
+          border-left: 1.5px solid rgba(245,158,11,0.45);
+          border-radius: 18px 0 0 0;
           pointer-events: none;
         }
-        .sv-cta-left {}
         .sv-cta-heading {
           font-family: var(--font-display);
-          font-size: clamp(20px, 2vw, 28px);
+          font-size: clamp(18px, 2vw, 24px);
           font-weight: 700; letter-spacing: -0.025em;
-          color: var(--text);
-          margin-bottom: 8px;
+          color: var(--text); margin-bottom: 6px;
         }
         .sv-cta-sub {
           font-family: var(--font-body);
-          font-size: 14px; color: var(--text2);
-          line-height: 1.7;
+          font-size: 13px; color: var(--text2); line-height: 1.7;
         }
-        .sv-cta-btns {
-          display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap;
-        }
+        .sv-cta-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+
         .sv-btn-primary {
-          display: inline-flex; align-items: center; gap: 9px;
-          padding: 13px 28px;
-          background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-          border-radius: 10px; color: #fff;
-          font-family: var(--font-body);
-          font-size: 14px; font-weight: 600;
+          display: inline-flex; align-items: center; gap: 8px;
+          padding: 12px 24px; border-radius: 10px;
+          color: #0a0800;
+          font-family: var(--font-body); font-size: 13px; font-weight: 700;
           text-decoration: none; letter-spacing: -0.01em;
+          background: linear-gradient(135deg, #f59e0b, #d97706);
+          box-shadow: 0 0 24px rgba(217,119,6,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
           transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-          box-shadow: 0 0 28px rgba(124,58,237,0.38), inset 0 1px 0 rgba(255,255,255,0.18);
           white-space: nowrap;
         }
         .sv-btn-primary:hover {
           transform: translateY(-2px) scale(1.02);
-          box-shadow: 0 0 48px rgba(124,58,237,0.58), inset 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: 0 0 40px rgba(245,158,11,0.5), inset 0 1px 0 rgba(255,255,255,0.22);
         }
         .sv-btn-primary svg { transition: transform 0.25s; }
         .sv-btn-primary:hover svg { transform: translateX(3px); }
 
         .sv-btn-ghost {
-          display: inline-flex; align-items: center; gap: 9px;
-          padding: 13px 24px;
-          border: 1px solid rgba(226,234,245,0.1);
-          border-radius: 10px;
-          color: rgba(226,234,245,0.45);
-          font-family: var(--font-body);
-          font-size: 14px; font-weight: 500;
-          text-decoration: none;
-          background: rgba(255,255,255,0.02);
-          transition: all 0.3s;
-          white-space: nowrap;
+          display: inline-flex; align-items: center; gap: 8px;
+          padding: 12px 22px;
+          border: 1px solid rgba(245,158,11,0.15); border-radius: 10px;
+          color: rgba(254,252,232,0.38);
+          font-family: var(--font-body); font-size: 13px; font-weight: 500;
+          text-decoration: none; background: rgba(245,158,11,0.03);
+          transition: all 0.3s; white-space: nowrap;
         }
         .sv-btn-ghost:hover {
-          border-color: rgba(167,139,250,0.35);
-          color: var(--accent3);
-          background: rgba(167,139,250,0.07);
+          border-color: rgba(245,158,11,0.38);
+          color: #fcd34d;
+          background: rgba(245,158,11,0.08);
           transform: translateY(-2px);
         }
 
-        /* section divider line */
         .sv-divider-line {
           width: 100%; height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(167,139,250,0.15), transparent);
-          margin-bottom: 0;
+          background: linear-gradient(90deg, transparent, rgba(245,158,11,0.13), transparent);
         }
 
-        /* responsive */
         @media (max-width: 1024px) {
           .sv-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 640px) {
           .sv-grid { grid-template-columns: 1fr; }
           .sv-inner { padding: 0 20px; }
-          .sv-cta { padding: 32px 24px; }
+          .sv-cta { padding: 28px 22px; }
           .sv-cta-btns { width: 100%; }
           .sv-btn-primary, .sv-btn-ghost { justify-content: center; flex: 1; }
         }
@@ -522,14 +399,13 @@ export default function Services(): React.JSX.Element {
       <div className="sv-divider-line" />
 
       <section id="services" className="sv-root sv-wrap">
-        {/* bg layers */}
         <div className="sv-bg-grid" />
         <div className="sv-glow-l" />
         <div className="sv-glow-r" />
 
         <div className="sv-inner">
 
-          {/* ── Header ── */}
+          {/* Header */}
           <div
             className="sv-header"
             ref={headRef}
@@ -541,7 +417,7 @@ export default function Services(): React.JSX.Element {
           >
             <div className="sv-badge">
               <span className="sv-badge-dot" />
-              <span className="sv-badge-txt">// What we do</span>
+              <span className="sv-badge-txt">// what we do</span>
             </div>
             <h2 className="sv-h2">
               Everything you need<br />
@@ -552,14 +428,30 @@ export default function Services(): React.JSX.Element {
             </p>
           </div>
 
-          {/* ── Grid ── */}
+          {/* Grid */}
           <div className="sv-grid">
             {SERVICES.map((svc, i) => (
               <ServiceCard key={svc.id} svc={svc} index={i} />
             ))}
           </div>
 
-         
+          {/* CTA strip */}
+          <div className="sv-cta">
+            <div>
+              <div className="sv-cta-heading">Ready to grow your business?</div>
+              <div className="sv-cta-sub">Tell us what you need — we'll build it fast, right, and within budget.</div>
+            </div>
+            <div className="sv-cta-btns">
+              <a href="#contact" className="sv-btn-primary">
+                Start a project
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a href="#contact" className="sv-btn-ghost">Get in touch</a>
+            </div>
+          </div>
+
         </div>
       </section>
 

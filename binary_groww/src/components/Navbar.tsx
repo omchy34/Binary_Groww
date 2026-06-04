@@ -23,7 +23,6 @@ export default function Navbar(): React.JSX.Element {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -40,18 +39,18 @@ export default function Navbar(): React.JSX.Element {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:wght@700;800&family=DM+Mono:wght@400;500&display=swap');
 
         .nb-root {
-          --bg-pill: rgba(8,8,15,0.55);
-          --bg-pill-scrolled: rgba(8,8,15,0.92);
-          --accent: #a78bfa;
-          --accent2: #7c3aed;
-          --accent3: #c4b5fd;
-          --border: rgba(167,139,250,0.12);
-          --border-scrolled: rgba(167,139,250,0.2);
-          --text: #f5f3ff;
-          --text-muted: rgba(245,243,255,0.42);
-          --font-display: 'Bricolage Grotesque', sans-serif;
-          --font-body: 'Inter', sans-serif;
-          --font-mono: 'DM Mono', monospace;
+          --bg-pill:         rgba(10,8,0,0.55);
+          --bg-pill-scrolled: rgba(10,8,0,0.94);
+          --accent:          #f59e0b;
+          --accent2:         #d97706;
+          --accent3:         #fcd34d;
+          --border:          rgba(245,158,11,0.12);
+          --border-scrolled: rgba(245,158,11,0.22);
+          --text:            #fefce8;
+          --text-muted:      rgba(254,252,232,0.42);
+          --font-display:    'Bricolage Grotesque', sans-serif;
+          --font-body:       'Inter', sans-serif;
+          --font-mono:       'DM Mono', monospace;
         }
 
         .nb {
@@ -80,7 +79,7 @@ export default function Navbar(): React.JSX.Element {
           transition: all 0.45s cubic-bezier(0.16,1,0.3,1);
           box-shadow:
             0 4px 28px rgba(0,0,0,0.4),
-            inset 0 1px 0 rgba(255,255,255,0.05);
+            inset 0 1px 0 rgba(255,255,255,0.04);
           position: relative;
         }
         .nb.scrolled .nb-pill {
@@ -88,8 +87,8 @@ export default function Navbar(): React.JSX.Element {
           border-color: var(--border-scrolled);
           box-shadow:
             0 8px 48px rgba(0,0,0,0.6),
-            0 0 44px rgba(124,58,237,0.07),
-            inset 0 1px 0 rgba(255,255,255,0.06);
+            0 0 44px rgba(217,119,6,0.08),
+            inset 0 1px 0 rgba(255,255,255,0.05);
         }
 
         .nb-logo {
@@ -97,8 +96,6 @@ export default function Navbar(): React.JSX.Element {
           text-decoration: none; flex-shrink: 0;
           user-select: none;
         }
-        
-        
         .nb-logo-text { line-height: 1; }
         .nb-logo-name {
           font-family: var(--font-display);
@@ -107,7 +104,7 @@ export default function Navbar(): React.JSX.Element {
         }
         .nb-logo-name em {
           font-style: normal;
-          background: linear-gradient(110deg, #c4b5fd, #7c3aed);
+          background: linear-gradient(110deg, #fcd34d, #d97706);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
           background-clip: text;
         }
@@ -115,7 +112,7 @@ export default function Navbar(): React.JSX.Element {
           font-family: var(--font-mono);
           font-size: 8px; letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: rgba(167,139,250,0.38);
+          color: rgba(245,158,11,0.38);
           margin-top: 3px;
           display: block;
         }
@@ -143,28 +140,28 @@ export default function Navbar(): React.JSX.Element {
           transition: width 0.22s cubic-bezier(0.16,1,0.3,1);
           border-radius: 1px;
         }
-        .nb-link:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+        .nb-link:hover { color: var(--text); background: rgba(245,158,11,0.05); }
         .nb-link:hover::after { width: 18px; }
-        .nb-link.active { color: var(--accent3); background: rgba(167,139,250,0.08); }
+        .nb-link.active { color: var(--accent3); background: rgba(245,158,11,0.08); }
         .nb-link.active::after { width: 18px; background: var(--accent3); }
 
         .nb-cta {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 10px 20px;
-          background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-          color: #fff;
+          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          color: #0a0800;
           font-family: var(--font-body);
-          font-size: 13px; font-weight: 600;
+          font-size: 13px; font-weight: 700;
           border-radius: 8px;
           text-decoration: none;
           transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-          box-shadow: 0 0 20px rgba(124,58,237,0.35), inset 0 1px 0 rgba(255,255,255,0.18);
+          box-shadow: 0 0 20px rgba(217,119,6,0.38), inset 0 1px 0 rgba(255,255,255,0.22);
           white-space: nowrap; flex-shrink: 0;
           letter-spacing: -0.01em;
         }
         .nb-cta:hover {
           transform: translateY(-2px) scale(1.02);
-          box-shadow: 0 0 36px rgba(124,58,237,0.55), inset 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: 0 0 36px rgba(245,158,11,0.55), inset 0 1px 0 rgba(255,255,255,0.25);
         }
         .nb-cta:active { transform: translateY(0) scale(0.99); }
         .nb-cta svg { transition: transform 0.25s; }
@@ -173,34 +170,34 @@ export default function Navbar(): React.JSX.Element {
         .nb-ham {
           display: none;
           flex-direction: column; gap: 5px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(245,158,11,0.04);
+          border: 1px solid rgba(245,158,11,0.12);
           border-radius: 100px;
           padding: 10px 12px;
           cursor: pointer;
           margin-left: 8px;
           transition: background 0.2s;
         }
-        .nb-ham:hover { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.2); }
+        .nb-ham:hover { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.25); }
         .nb-ham-bar {
           display: block; width: 18px; height: 1.5px;
-          background: rgba(245,243,255,0.6);
+          background: rgba(254,252,232,0.55);
           border-radius: 2px;
           transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
           transform-origin: center;
         }
 
-        /* ── Compact dropdown (replaces full-page drawer) ── */
+        /* ── Dropdown ── */
         .nb-dropdown {
           position: absolute;
           top: calc(100% + 10px);
           left: 0; right: 0;
-          background: rgba(8,8,20,0.96);
-          border: 1px solid rgba(167,139,250,0.18);
+          background: rgba(10,8,0,0.97);
+          border: 1px solid rgba(245,158,11,0.18);
           border-radius: 20px;
           backdrop-filter: blur(32px);
           -webkit-backdrop-filter: blur(32px);
-          box-shadow: 0 16px 48px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.05);
+          box-shadow: 0 16px 48px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04);
           overflow: hidden;
           transform-origin: top center;
           transform: scaleY(0.92) translateY(-8px);
@@ -226,14 +223,14 @@ export default function Navbar(): React.JSX.Element {
           padding: 12px 16px;
           font-family: var(--font-body);
           font-size: 15px; font-weight: 500;
-          color: rgba(245,243,255,0.55);
+          color: rgba(254,252,232,0.5);
           text-decoration: none;
           border-radius: 12px;
           transition: background 0.18s, color 0.18s;
           letter-spacing: -0.01em;
         }
         .dd-link:hover {
-          background: rgba(167,139,250,0.09);
+          background: rgba(245,158,11,0.08);
           color: var(--accent3);
         }
         .dd-divider {
@@ -248,18 +245,18 @@ export default function Navbar(): React.JSX.Element {
           gap: 8px;
           margin: 4px 0 0;
           padding: 13px 20px;
-          background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-          color: #fff;
+          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          color: #0a0800;
           font-family: var(--font-body);
-          font-size: 14px; font-weight: 600;
+          font-size: 14px; font-weight: 700;
           border-radius: 12px;
           text-decoration: none;
-          box-shadow: 0 0 24px rgba(124,58,237,0.4), inset 0 1px 0 rgba(255,255,255,0.18);
+          box-shadow: 0 0 24px rgba(217,119,6,0.4), inset 0 1px 0 rgba(255,255,255,0.22);
           transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
           letter-spacing: -0.01em;
         }
         .dd-cta:hover {
-          box-shadow: 0 0 40px rgba(124,58,237,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: 0 0 40px rgba(245,158,11,0.55), inset 0 1px 0 rgba(255,255,255,0.25);
           transform: translateY(-1px);
         }
 
@@ -309,7 +306,6 @@ export default function Navbar(): React.JSX.Element {
             </button>
           </div>
 
-          {/* Compact dropdown — replaces full-page drawer */}
           <div className={`nb-dropdown ${mobileOpen ? "open" : ""}`}>
             <div className="nb-dropdown-inner">
               {NAV_LINKS.map((l) => (

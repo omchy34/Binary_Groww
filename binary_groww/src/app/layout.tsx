@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from 'next'
-import { Syne, Geist_Mono } from 'next/font/google'
+import { Syne, Geist_Mono, Geist } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const syne = Syne({
   subsets: ['latin'],
@@ -122,7 +125,7 @@ twitter: {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${geistMono.variable}`}>
+    <html lang="en" >
       <head>
         {/* JSON-LD structured data — Local Business */}
         <script

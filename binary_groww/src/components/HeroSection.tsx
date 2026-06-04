@@ -2,10 +2,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const WORDS = [
-  { text: "Websites.", color: "#22d3ee" },
+  { text: "Websites.", color: "#f59e0b" },
   { text: "Mobile Apps.", color: "#f97316" },
-  { text: "Brands.", color: "#a855f7" },
-  { text: "Experiences.", color: "#f43f5e" },
+  { text: "Brands.", color: "#fb923c" },
+  { text: "Experiences.", color: "#fbbf24" },
 ];
 
 export default function Hero(): React.JSX.Element {
@@ -58,15 +58,15 @@ export default function Hero(): React.JSX.Element {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap');
 
         .h-root {
-          --bg: #08080f;
-          --bg2: #0d0d1c;
-          --accent: #a78bfa;
-          --accent2: #7c3aed;
-          --accent3: #c4b5fd;
+          --bg: #0a0800;
+          --bg2: #110f00;
+          --accent: #f59e0b;
+          --accent2: #d97706;
+          --accent3: #fcd34d;
           --green: #22c55e;
-          --text: #f5f3ff;
-          --text2: rgba(245,243,255,0.55);
-          --text3: rgba(245,243,255,0.22);
+          --text: #fefce8;
+          --text2: rgba(254,252,232,0.52);
+          --text3: rgba(254,252,232,0.2);
           --font-display: 'Bricolage Grotesque', sans-serif;
           --font-body: 'Inter', sans-serif;
           --font-mono: 'DM Mono', monospace;
@@ -86,8 +86,8 @@ export default function Hero(): React.JSX.Element {
         .h-bg-grid {
           position: absolute; inset: 0; pointer-events: none;
           background-image:
-            linear-gradient(rgba(167,139,250,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(167,139,250,0.08) 1px, transparent 1px);
+            linear-gradient(rgba(245,158,11,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,158,11,0.06) 1px, transparent 1px);
           background-size: 56px 56px;
           mask-image: radial-gradient(ellipse 80% 70% at 50% 36%, black 5%, transparent 100%);
         }
@@ -102,9 +102,9 @@ export default function Hero(): React.JSX.Element {
           will-change: transform;
           transition: transform 2s cubic-bezier(0.16,1,0.3,1);
         }
-        .h-glow-1 { width:700px;height:700px;background:radial-gradient(circle,rgba(124,58,237,0.13) 0%,transparent 65%);top:-240px;right:-140px; }
-        .h-glow-2 { width:480px;height:480px;background:radial-gradient(circle,rgba(196,181,253,0.07) 0%,transparent 70%);bottom:-120px;left:-80px; }
-        .h-glow-3 { width:300px;height:300px;background:radial-gradient(circle,rgba(167,139,250,0.05) 0%,transparent 70%);top:42%;left:36%; }
+        .h-glow-1 { width:700px;height:700px;background:radial-gradient(circle,rgba(217,119,6,0.14) 0%,transparent 65%);top:-240px;right:-140px; }
+        .h-glow-2 { width:480px;height:480px;background:radial-gradient(circle,rgba(251,191,36,0.06) 0%,transparent 70%);bottom:-120px;left:-80px; }
+        .h-glow-3 { width:300px;height:300px;background:radial-gradient(circle,rgba(245,158,11,0.05) 0%,transparent 70%);top:42%;left:36%; }
 
         /* ── DESKTOP GRID ── */
         .h-inner {
@@ -123,8 +123,8 @@ export default function Hero(): React.JSX.Element {
         /* badge */
         .h-badge {
           display: inline-flex; align-items: center; gap: 9px;
-          background: rgba(167,139,250,0.07);
-          border: 1px solid rgba(167,139,250,0.16);
+          background: rgba(245,158,11,0.07);
+          border: 1px solid rgba(245,158,11,0.18);
           border-radius: 100px;
           padding: 6px 16px 6px 11px;
           width: fit-content; margin-bottom: 32px;
@@ -133,14 +133,14 @@ export default function Hero(): React.JSX.Element {
         .h-badge-dot {
           width:6px;height:6px;border-radius:50%;
           background:var(--accent);
-          box-shadow:0 0 8px rgba(167,139,250,0.9);
+          box-shadow:0 0 8px rgba(245,158,11,0.9);
           animation:h-glow-dot 2.2s ease-in-out infinite;flex-shrink:0;
         }
         @keyframes h-glow-dot {
-          0%,100%{box-shadow:0 0 5px rgba(167,139,250,0.7);}
-          50%{box-shadow:0 0 14px rgba(167,139,250,1),0 0 24px rgba(167,139,250,0.3);}
+          0%,100%{box-shadow:0 0 5px rgba(245,158,11,0.7);}
+          50%{box-shadow:0 0 14px rgba(245,158,11,1),0 0 24px rgba(245,158,11,0.3);}
         }
-        .h-badge-txt { font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;color:rgba(167,139,250,0.75); }
+        .h-badge-txt { font-family:var(--font-mono);font-size:10px;letter-spacing:0.08em;color:rgba(245,158,11,0.75); }
 
         /* headline */
         .h-headline {
@@ -149,10 +149,10 @@ export default function Hero(): React.JSX.Element {
           margin-bottom:4px;
           animation:h-fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both;
         }
-        .h-headline-dim { display:block;color:rgba(226,234,245,0.2);font-weight:600; }
+        .h-headline-dim { display:block;color:rgba(254,252,232,0.2);font-weight:600; }
         .h-headline-grad {
           display:block;
-          background:linear-gradient(118deg,#c4b5fd 0%,#a78bfa 50%,#7c3aed 100%);
+          background:linear-gradient(118deg,#fcd34d 0%,#f59e0b 50%,#d97706 100%);
           -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
         }
 
@@ -163,7 +163,7 @@ export default function Hero(): React.JSX.Element {
           color:var(--text);min-height:1.3em;margin-bottom:28px;
           animation:h-fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both;
         }
-        .h-tw-pre { color:rgba(226,234,245,0.22);font-weight:600; }
+        .h-tw-pre { color:rgba(254,252,232,0.22);font-weight:600; }
         .h-cursor {
           display:inline-block;width:2px;height:0.6em;
           vertical-align:middle;margin-left:3px;
@@ -177,7 +177,7 @@ export default function Hero(): React.JSX.Element {
           color:var(--text2);line-height:1.8;max-width:460px;margin-bottom:40px;
           animation:h-fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.4s both;
         }
-        .h-sub strong { font-weight:600;color:rgba(226,234,245,0.8); }
+        .h-sub strong { font-weight:600;color:rgba(254,252,232,0.8); }
 
         /* buttons */
         .h-btns {
@@ -187,14 +187,14 @@ export default function Hero(): React.JSX.Element {
         .h-btn-primary {
           display:inline-flex;align-items:center;gap:9px;
           padding:13px 30px;
-          background:linear-gradient(135deg,#a78bfa 0%,#7c3aed 100%);
-          border-radius:10px;color:#fff;
-          font-family:var(--font-body);font-size:14px;font-weight:600;
+          background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);
+          border-radius:10px;color:#0a0800;
+          font-family:var(--font-body);font-size:14px;font-weight:700;
           text-decoration:none;letter-spacing:-0.01em;
           transition:all 0.3s cubic-bezier(0.16,1,0.3,1);
-          box-shadow:0 0 28px rgba(124,58,237,0.38),0 4px 16px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.18);
+          box-shadow:0 0 28px rgba(217,119,6,0.4),0 4px 16px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.22);
         }
-        .h-btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 48px rgba(124,58,237,0.58),0 8px 24px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.2);}
+        .h-btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 0 48px rgba(245,158,11,0.6),0 8px 24px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.25);}
         .h-btn-primary:active{transform:translateY(0) scale(0.99);}
         .h-btn-primary svg{transition:transform 0.25s;}
         .h-btn-primary:hover svg{transform:translateX(3px);}
@@ -202,17 +202,17 @@ export default function Hero(): React.JSX.Element {
         .h-btn-ghost {
           display:inline-flex;align-items:center;gap:9px;
           padding:13px 28px;
-          border:1px solid rgba(226,234,245,0.1);border-radius:10px;
-          color:rgba(226,234,245,0.48);
+          border:1px solid rgba(245,158,11,0.15);border-radius:10px;
+          color:rgba(254,252,232,0.45);
           font-family:var(--font-body);font-size:14px;font-weight:500;
-          text-decoration:none;background:rgba(255,255,255,0.02);
+          text-decoration:none;background:rgba(245,158,11,0.03);
           transition:all 0.3s cubic-bezier(0.16,1,0.3,1);letter-spacing:-0.01em;
         }
-        .h-btn-ghost:hover{border-color:rgba(167,139,250,0.35);color:var(--accent3);background:rgba(167,139,250,0.07);transform:translateY(-2px);}
+        .h-btn-ghost:hover{border-color:rgba(245,158,11,0.4);color:var(--accent3);background:rgba(245,158,11,0.08);transform:translateY(-2px);}
 
         /* stats */
         .h-stats { display:flex;gap:0;animation:h-fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both; }
-        .h-stat { padding-right:24px;border-right:1px solid rgba(255,255,255,0.07);margin-right:24px; }
+        .h-stat { padding-right:24px;border-right:1px solid rgba(255,255,255,0.06);margin-right:24px; }
         .h-stat:last-child { border-right:none;margin-right:0;padding-right:0; }
         .h-stat-n { font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--text);line-height:1;margin-bottom:4px;letter-spacing:-0.03em; }
         .h-stat-n em { font-style:normal;color:var(--accent); }
@@ -223,20 +223,20 @@ export default function Hero(): React.JSX.Element {
 
         .h-card {
           position:relative;border-radius:20px;aspect-ratio:3/4;
-          background:var(--bg2);border:1px solid rgba(167,139,250,0.12);
+          background:var(--bg2);border:1px solid rgba(245,158,11,0.12);
           overflow:visible;
-          box-shadow:0 32px 80px rgba(0,0,0,0.5),0 0 60px rgba(124,58,237,0.07);
+          box-shadow:0 32px 80px rgba(0,0,0,0.55),0 0 60px rgba(217,119,6,0.07);
           will-change:transform;transition:transform 0.1s linear;
         }
         .h-card-inner { position:absolute;inset:0;border-radius:20px;overflow:hidden; }
         .h-card::before {
           content:'';position:absolute;top:-1px;left:-1px;width:56px;height:56px;
           border-top:1.5px solid var(--accent);border-left:1.5px solid var(--accent);
-          border-radius:20px 0 0 0;z-index:4;pointer-events:none;opacity:0.65;
+          border-radius:20px 0 0 0;z-index:4;pointer-events:none;opacity:0.7;
         }
         .h-card::after {
           content:'';position:absolute;bottom:-1px;right:-1px;width:56px;height:56px;
-          border-bottom:1.5px solid rgba(124,58,237,0.4);border-right:1.5px solid rgba(124,58,237,0.4);
+          border-bottom:1.5px solid rgba(217,119,6,0.35);border-right:1.5px solid rgba(217,119,6,0.35);
           border-radius:0 0 20px 0;z-index:4;pointer-events:none;
         }
         .h-photo-img {
@@ -247,27 +247,27 @@ export default function Hero(): React.JSX.Element {
         /* desktop overlay */
         .h-overlay {
           position:absolute;bottom:0;left:0;right:0;
-          background:linear-gradient(to top,rgba(8,8,15,0.97) 0%,rgba(8,8,15,0.72) 42%,transparent 100%);
+          background:linear-gradient(to top,rgba(10,8,0,0.97) 0%,rgba(10,8,0,0.72) 42%,transparent 100%);
           padding:36px 22px 24px;z-index:2;border-radius:0 0 20px 20px;
         }
         .h-founder-name { font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin-bottom:3px; }
         .h-founder-role { font-family:var(--font-mono);font-size:9px;letter-spacing:0.1em;color:var(--accent);margin-bottom:10px;opacity:0.7; }
-        .h-founder-quote { font-family:var(--font-body);font-size:12.5px;font-weight:400;font-style:italic;color:rgba(226,234,245,0.32);line-height:1.7; }
+        .h-founder-quote { font-family:var(--font-body);font-size:12.5px;font-weight:400;font-style:italic;color:rgba(254,252,232,0.3);line-height:1.7; }
 
         /* mobile overlay — hidden on desktop */
         .h-overlay-mobile { display:none; }
 
         /* floating badges */
         .h-badge-float {
-          position:absolute;background:rgba(8,8,20,0.88);
-          border:1px solid rgba(167,139,250,0.18);border-radius:12px;padding:10px 14px;
+          position:absolute;background:rgba(10,8,0,0.9);
+          border:1px solid rgba(245,158,11,0.18);border-radius:12px;padding:10px 14px;
           backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-          z-index:10;box-shadow:0 8px 28px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.04);
+          z-index:10;box-shadow:0 8px 28px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.04);
         }
         .h-badge-float.h-bf-top { top:24px;right:-22px;animation:h-float 4s ease-in-out infinite; }
         .h-badge-float.h-bf-bot { bottom:88px;left:-26px;animation:h-float 4s ease-in-out 1.8s infinite; }
         @keyframes h-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
-        .h-bf-lbl { font-family:var(--font-mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(167,139,250,0.45);margin-bottom:4px; }
+        .h-bf-lbl { font-family:var(--font-mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,158,11,0.45);margin-bottom:4px; }
         .h-bf-val { font-family:var(--font-body);font-size:12.5px;font-weight:500;color:var(--text);display:flex;align-items:center;gap:7px; }
         .h-green-dot { width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(52,211,153,0.85);flex-shrink:0;animation:h-glow-g 2.2s ease-in-out infinite; }
         @keyframes h-glow-g{0%,100%{box-shadow:0 0 5px rgba(52,211,153,0.7);}50%{box-shadow:0 0 14px rgba(52,211,153,1),0 0 22px rgba(52,211,153,0.35);}}
@@ -284,21 +284,18 @@ export default function Hero(): React.JSX.Element {
         ══════════════════════════════════════ */
         @media (max-width: 940px) {
 
-          /* remove desktop top padding */
           .h-wrap {
             padding-top: 0;
             min-height: 100vh;
             align-items: flex-start;
           }
 
-          /* single column, no gap */
           .h-inner {
             grid-template-columns: 1fr;
             gap: 0;
             padding: 0;
           }
 
-          /* card column goes above text */
           .h-right {
             order: -1;
             max-width: 100%;
@@ -307,7 +304,6 @@ export default function Hero(): React.JSX.Element {
             padding: 0;
           }
 
-          /* card: full-bleed, no radius, overflow visible so overlay can extend */
           .h-card {
             aspect-ratio: 3/4;
             border-radius: 0;
@@ -316,10 +312,9 @@ export default function Hero(): React.JSX.Element {
             border-top: none;
             border-bottom: none;
             box-shadow: none;
-            overflow: visible; /* CRITICAL: let overlay-mobile bleed below */
+            overflow: visible;
           }
 
-          /* inner clips the photo only */
           .h-card-inner {
             border-radius: 0;
             overflow: hidden;
@@ -328,36 +323,25 @@ export default function Hero(): React.JSX.Element {
           .h-photo-img { border-radius: 0; }
           .h-card::before, .h-card::after { display: none; }
 
-          /* hide desktop overlay */
           .h-overlay { display: none; }
 
-          /*
-           * ── MOBILE OVERLAY ──
-           * Positioned OUTSIDE h-card-inner so it is NOT clipped by the photo.
-           * It sits at the bottom of h-card (overflow:visible) and extends
-           * downward past the card edge, visually connecting to the stats below.
-           */
           .h-overlay-mobile {
             display: block;
-            
             position: absolute;
-            /* Start well inside the photo so gradient covers faces softly */
-            bottom: -30px;   /* -1px so it sits flush with card bottom edge */
+            bottom: -30px;
             left: 0;
             right: 0;
-            /* Extend BELOW the card into the stats area */
             padding: 130px 20px 40px;
             background: linear-gradient(
               to top,
-              rgba(8,8,15,1)    0%,
-              rgba(8,8,15,0.98) 30%,
-              rgba(8,8,15,0.82) 52%,
-              rgba(8,8,15,0.4)  72%,
+              rgba(10,8,0,1)    0%,
+              rgba(10,8,0,0.98) 30%,
+              rgba(10,8,0,0.82) 52%,
+              rgba(10,8,0,0.4)  72%,
               transparent       100%
             );
             z-index: 3;
             text-align:center;
-            /* No border-radius — full bleed */
           }
 
           .h-overlay-mobile .h-om-headline {
@@ -366,8 +350,7 @@ export default function Hero(): React.JSX.Element {
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.2;
-            
-            color: rgb(180, 180, 180);
+            color: rgb(180, 170, 140);
             margin-bottom: 2px;
           }
           .h-overlay-mobile .h-om-grad {
@@ -376,7 +359,7 @@ export default function Hero(): React.JSX.Element {
             font-weight: 700;
             letter-spacing: -0.02em;
             line-height: 1.2;
-            background: linear-gradient(118deg,#c4b5fd 0%,#a78bfa 50%,#7c3aed 100%);
+            background: linear-gradient(118deg,#fcd34d 0%,#f59e0b 50%,#d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -393,17 +376,16 @@ export default function Hero(): React.JSX.Element {
             min-height: 1.4em;
           }
           .h-overlay-mobile .h-om-typewriter .h-tw-pre {
-            color: rgba(226,234,245,0.22);
+            color: rgba(254,252,232,0.22);
           }
           .h-overlay-mobile .h-om-btns {
             display: flex;
-            justify-content: center; /* Horizontal center */
+            justify-content: center;
             align-items: center;
             gap: 10px;
             flex-wrap: wrap;
           }
 
-          /* status badge inside card — top-right, inside card bounds */
           .h-badge-float.h-bf-top {
             top: 16px;
             right: 16px;
@@ -411,10 +393,8 @@ export default function Hero(): React.JSX.Element {
             bottom: auto;
             animation: h-float 4s ease-in-out infinite;
           }
-          /* hide response-time on mobile */
           .h-badge-float.h-bf-bot { display: none; }
 
-          /* ── left col: stats only, pushed DOWN with top margin ── */
           .h-badge    { display: none; }
           .h-headline { display: none; }
           .h-typewriter { display: none; }
@@ -422,22 +402,19 @@ export default function Hero(): React.JSX.Element {
           .h-btns     { display: none; }
 
           .h-left {
-            /* Push stats below the overlay that bleeds from the card */
             padding: 60px 24px 56px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            /* Extra top margin ensures stats are visually below overlay content */
             margin-top: 16px;
           }
 
-          /* stats: 2×2 grid on mobile */
           .h-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 28px 16px;
             width: 100%;
-            animation: none; /* prevent overlap with static render */
+            animation: none;
           }
           .h-stat {
             border-right: none;
@@ -445,7 +422,7 @@ export default function Hero(): React.JSX.Element {
             margin-right: 0;
           }
           .h-stat-n { font-size: 28px; }
-          .h-stat-l { font-size: 12px; color: rgba(245,243,255,0.35); }
+          .h-stat-l { font-size: 12px; color: rgba(254,252,232,0.32); }
         }
 
         /* ── tiny phones ── */
@@ -513,7 +490,7 @@ export default function Hero(): React.JSX.Element {
           {/* ── RIGHT ── */}
           <div className="h-right">
 
-            {/* Status badge — inside h-right so it floats over card */}
+            {/* Status badge */}
             <div className="h-badge-float h-bf-top">
               <div className="h-bf-lbl">Status</div>
               <div className="h-bf-val">
@@ -532,11 +509,9 @@ export default function Hero(): React.JSX.Element {
               className="h-card"
               style={{ transform: `perspective(1000px) rotateY(${tx * 0.022}deg) rotateX(${-ty * 0.022}deg)` }}
             >
-              {/* h-card-inner clips ONLY the photo */}
               <div className="h-card-inner">
                 <img src="/main.png" alt="Founder" className="h-photo-img" />
 
-                {/* Desktop overlay — inside card-inner, clipped with photo */}
                 <div className="h-overlay">
                   <div className="h-founder-name">Your Name</div>
                   <div className="h-founder-role">// Founder & Lead Developer</div>
@@ -546,12 +521,6 @@ export default function Hero(): React.JSX.Element {
                 </div>
               </div>
 
-              {/*
-                * MOBILE OVERLAY — outside h-card-inner
-                * Because h-card has overflow:visible on mobile,
-                * this overlay is NOT clipped and can extend below the photo edge,
-                * creating a seamless visual connection between image and stats.
-                */}
               <div className="h-overlay-mobile">
                 <div className="h-om-headline">Grow your business</div>
                 <div className="h-om-grad">with binaryGroww</div>

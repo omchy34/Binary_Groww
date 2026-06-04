@@ -12,8 +12,8 @@ interface Testimonial {
   service: string;
   rating: number;
   quote: string;
-  videoSrc: string; // replace with real video URLs
-  thumb: string;    // replace with real thumbnail URLs
+  videoSrc: string;
+  thumb: string;
 }
 
 /* ── Data ───────────────────────────────────────────── */
@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     service: "E-commerce platform",
     rating: 5,
     quote: "binaryGroww delivered our entire e-commerce platform in under 6 weeks. The attention to detail and performance optimization was beyond what we expected.",
-    videoSrc: "", // e.g. "https://www.w3schools.com/html/mov_bbb.mp4"
+    videoSrc: "",
     thumb: "",
   },
   {
@@ -113,7 +113,6 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
     setMuted(v.muted);
   };
 
-  // initials avatar
   const initials = t.name.split(" ").map(w => w[0]).join("").slice(0, 2);
 
   return (
@@ -126,7 +125,6 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
       {/* ── Video / placeholder area ── */}
       <div className="tv-video-wrap" onClick={toggle}>
 
-        {/* Placeholder gradient when no video */}
         {!hasVideo && (
           <div className="tv-placeholder">
             <div className="tv-placeholder-lines">
@@ -138,7 +136,6 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
           </div>
         )}
 
-        {/* Actual video */}
         {hasVideo && (
           <video
             ref={videoRef}
@@ -152,10 +149,8 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
           />
         )}
 
-        {/* Overlay gradient */}
         <div className={`tv-overlay ${playing ? "playing" : ""}`} />
 
-        {/* Play / pause button */}
         <div className={`tv-play-btn ${hovered || !playing ? "visible" : ""}`}>
           {playing ? (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -168,7 +163,6 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
           )}
         </div>
 
-        {/* Top-right controls */}
         <div className="tv-top-controls">
           <div className="tv-service-tag">{t.service}</div>
           {hasVideo && (
@@ -186,7 +180,6 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
           )}
         </div>
 
-        {/* Progress bar */}
         {hasVideo && (
           <div className="tv-progress-wrap" onClick={e => { e.stopPropagation(); seek(e); }}>
             <div className="tv-progress-track">
@@ -195,10 +188,9 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
           </div>
         )}
 
-        {/* Stars overlay bottom-left */}
         <div className="tv-stars-overlay">
           {[...Array(t.rating)].map((_, i) => (
-            <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="#a78bfa">
+            <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="#f59e0b">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
           ))}
@@ -207,11 +199,9 @@ function VideoCard({ t, index }: { t: Testimonial; index: number }) {
 
       {/* ── Card body ── */}
       <div className="tv-body">
-        {/* Quote */}
         <div className="tv-quote-mark">"</div>
         <p className="tv-quote">{t.quote}</p>
 
-        {/* Author */}
         <div className="tv-author">
           <div className="tv-avatar">{initials}</div>
           <div>
@@ -255,23 +245,23 @@ export default function Testimonials(): React.JSX.Element {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap');
 
-        /* ── tokens ── */
+        /* ── tokens — amber/gold theme matching Hero ── */
         .tv-root {
-          --bg: #08080f;
-          --bg2: #0d0d1c;
-          --bg3: #111127;
-          --accent: #a78bfa;
-          --accent2: #7c3aed;
-          --accent3: #c4b5fd;
-          --green: #22c55e;
-          --text: #f5f3ff;
-          --text2: rgba(245,243,255,0.55);
-          --text3: rgba(245,243,255,0.22);
-          --border: rgba(167,139,250,0.14);
+          --bg:      #0a0800;
+          --bg2:     #110f00;
+          --bg3:     #151200;
+          --accent:  #f59e0b;
+          --accent2: #d97706;
+          --accent3: #fcd34d;
+          --green:   #22c55e;
+          --text:    #fefce8;
+          --text2:   rgba(254,252,232,0.52);
+          --text3:   rgba(254,252,232,0.2);
+          --border:  rgba(245,158,11,0.14);
           --border2: rgba(255,255,255,0.06);
           --font-display: 'Bricolage Grotesque', sans-serif;
-          --font-body: 'Inter', sans-serif;
-          --font-mono: 'DM Mono', monospace;
+          --font-body:    'Inter', sans-serif;
+          --font-mono:    'DM Mono', monospace;
         }
 
         /* ── section ── */
@@ -286,8 +276,8 @@ export default function Testimonials(): React.JSX.Element {
         .tv-bg-grid {
           position: absolute; inset: 0; pointer-events: none;
           background-image:
-            linear-gradient(rgba(167,139,250,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(167,139,250,0.08) 1px, transparent 1px);
+            linear-gradient(rgba(245,158,11,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,158,11,0.06) 1px, transparent 1px);
           background-size: 56px 56px;
           mask-image: radial-gradient(ellipse 80% 70% at 50% 36%, black 5%, transparent 100%);
         }
@@ -305,17 +295,17 @@ export default function Testimonials(): React.JSX.Element {
         }
         .tv-glow-1 {
           width: 700px; height: 700px;
-          background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 65%);
+          background: radial-gradient(circle, rgba(217,119,6,0.14) 0%, transparent 65%);
           top: -260px; left: -160px;
         }
         .tv-glow-2 {
           width: 500px; height: 500px;
-          background: radial-gradient(circle, rgba(196,181,253,0.07) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(251,191,36,0.07) 0%, transparent 70%);
           bottom: -140px; right: -100px;
         }
         .tv-glow-3 {
           width: 360px; height: 360px;
-          background: radial-gradient(circle, rgba(167,139,250,0.05) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%);
           top: 50%; left: 50%; transform: translate(-50%, -50%);
         }
 
@@ -335,8 +325,8 @@ export default function Testimonials(): React.JSX.Element {
         }
         .tv-badge {
           display: inline-flex; align-items: center; gap: 7px;
-          background: rgba(167,139,250,0.07);
-          border: 1px solid rgba(167,139,250,0.16);
+          background: rgba(245,158,11,0.07);
+          border: 1px solid rgba(245,158,11,0.18);
           border-radius: 100px;
           padding: 4px 12px 4px 9px;
           margin-bottom: 14px;
@@ -344,17 +334,17 @@ export default function Testimonials(): React.JSX.Element {
         .tv-badge-dot {
           width: 5px; height: 5px; border-radius: 50%;
           background: var(--accent);
-          box-shadow: 0 0 8px rgba(167,139,250,0.9);
+          box-shadow: 0 0 8px rgba(245,158,11,0.9);
           animation: tv-glow-dot 2.2s ease-in-out infinite;
         }
         @keyframes tv-glow-dot {
-          0%,100% { box-shadow: 0 0 5px rgba(167,139,250,0.7); }
-          50% { box-shadow: 0 0 14px rgba(167,139,250,1), 0 0 24px rgba(167,139,250,0.3); }
+          0%,100% { box-shadow: 0 0 5px rgba(245,158,11,0.7); }
+          50%      { box-shadow: 0 0 14px rgba(245,158,11,1), 0 0 24px rgba(245,158,11,0.3); }
         }
         .tv-badge-txt {
           font-family: var(--font-mono);
           font-size: 9px; letter-spacing: 0.08em;
-          color: rgba(167,139,250,0.75);
+          color: rgba(245,158,11,0.75);
         }
         .tv-title {
           font-family: var(--font-display);
@@ -362,9 +352,9 @@ export default function Testimonials(): React.JSX.Element {
           font-weight: 800; letter-spacing: -0.028em; line-height: 1.1;
           margin-bottom: 10px;
         }
-        .tv-title-dim { color: rgba(226,234,245,0.2); font-weight: 600; }
+        .tv-title-dim { color: rgba(254,252,232,0.2); font-weight: 600; }
         .tv-title-grad {
-          background: linear-gradient(118deg, #c4b5fd 0%, #a78bfa 50%, #7c3aed 100%);
+          background: linear-gradient(118deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
           background-clip: text;
         }
@@ -377,7 +367,7 @@ export default function Testimonials(): React.JSX.Element {
         /* trust bar */
         .tv-trust {
           display: inline-flex; align-items: center; gap: 14px;
-          background: rgba(167,139,250,0.04);
+          background: rgba(245,158,11,0.04);
           border: 1px solid var(--border);
           border-radius: 100px;
           padding: 7px 18px;
@@ -413,9 +403,9 @@ export default function Testimonials(): React.JSX.Element {
           animation: tv-fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both;
         }
         .tv-card:hover {
-          border-color: rgba(167,139,250,0.35);
+          border-color: rgba(245,158,11,0.35);
           transform: translateY(-3px);
-          box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(167,139,250,0.08);
+          box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(245,158,11,0.08);
         }
 
         /* corner brackets */
@@ -432,8 +422,8 @@ export default function Testimonials(): React.JSX.Element {
         }
         .tv-corner-br {
           bottom: -1px; right: -1px;
-          border-bottom: 1.5px solid rgba(124,58,237,0.4);
-          border-right: 1.5px solid rgba(124,58,237,0.4);
+          border-bottom: 1.5px solid rgba(217,119,6,0.4);
+          border-right: 1.5px solid rgba(217,119,6,0.4);
           border-radius: 0 0 14px 0;
         }
 
@@ -452,7 +442,7 @@ export default function Testimonials(): React.JSX.Element {
           display: flex; flex-direction: column;
           align-items: center; justify-content: center;
           gap: 8px;
-          background: linear-gradient(135deg, #0d0d1c 0%, #111127 100%);
+          background: linear-gradient(135deg, #110f00 0%, #151200 100%);
         }
         .tv-placeholder-lines {
           display: flex; flex-direction: column;
@@ -461,12 +451,12 @@ export default function Testimonials(): React.JSX.Element {
         }
         .tv-ph-line {
           height: 4px; border-radius: 100px;
-          background: rgba(167,139,250,0.12);
+          background: rgba(245,158,11,0.12);
           animation: tv-shimmer 2.2s ease-in-out infinite;
         }
         @keyframes tv-shimmer {
           0%,100% { opacity: 0.4; }
-          50% { opacity: 1; }
+          50%      { opacity: 1; }
         }
         .tv-placeholder-label {
           font-family: var(--font-mono);
@@ -480,9 +470,9 @@ export default function Testimonials(): React.JSX.Element {
           position: absolute; inset: 0;
           background: linear-gradient(
             to top,
-            rgba(8,8,15,0.85) 0%,
-            rgba(8,8,15,0.2) 45%,
-            rgba(8,8,15,0.0) 100%
+            rgba(10,8,0,0.85) 0%,
+            rgba(10,8,0,0.2)  45%,
+            rgba(10,8,0,0.0)  100%
           );
           transition: opacity 0.3s;
         }
@@ -493,14 +483,14 @@ export default function Testimonials(): React.JSX.Element {
           position: absolute; top: 50%; left: 50%;
           transform: translate(-50%, -50%) scale(0.85);
           width: 38px; height: 38px;
-          background: rgba(124,58,237,0.85);
+          background: rgba(217,119,6,0.85);
           border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
-          color: #fff;
+          color: #0a0800;
           opacity: 0;
           transition: opacity 0.25s, transform 0.25s;
           backdrop-filter: blur(8px);
-          box-shadow: 0 0 24px rgba(124,58,237,0.6);
+          box-shadow: 0 0 24px rgba(245,158,11,0.6);
         }
         .tv-play-btn.visible {
           opacity: 1;
@@ -517,16 +507,16 @@ export default function Testimonials(): React.JSX.Element {
         .tv-service-tag {
           font-family: var(--font-mono);
           font-size: 8px; letter-spacing: 0.09em;
-          color: rgba(196,181,253,0.85);
-          background: rgba(8,8,15,0.7);
-          border: 1px solid rgba(167,139,250,0.2);
+          color: rgba(252,211,77,0.85);
+          background: rgba(10,8,0,0.7);
+          border: 1px solid rgba(245,158,11,0.2);
           border-radius: 100px;
           padding: 3px 8px;
           backdrop-filter: blur(12px);
         }
         .tv-mute-btn {
           width: 22px; height: 22px;
-          background: rgba(8,8,15,0.7);
+          background: rgba(10,8,0,0.7);
           border: 1px solid rgba(255,255,255,0.08);
           border-radius: 50%;
           display: flex; align-items: center; justify-content: center;
@@ -535,7 +525,7 @@ export default function Testimonials(): React.JSX.Element {
           backdrop-filter: blur(12px);
           transition: border-color 0.2s, color 0.2s;
         }
-        .tv-mute-btn:hover { border-color: rgba(167,139,250,0.3); color: var(--accent3); }
+        .tv-mute-btn:hover { border-color: rgba(245,158,11,0.3); color: var(--accent3); }
 
         /* progress */
         .tv-progress-wrap {
@@ -568,7 +558,7 @@ export default function Testimonials(): React.JSX.Element {
         .tv-quote-mark {
           font-family: var(--font-display);
           font-size: 32px; line-height: 1;
-          color: rgba(167,139,250,0.2);
+          color: rgba(245,158,11,0.2);
           margin-bottom: -4px;
           margin-left: -2px;
           font-weight: 800;
@@ -588,8 +578,8 @@ export default function Testimonials(): React.JSX.Element {
         }
         .tv-avatar {
           width: 30px; height: 30px; border-radius: 50%;
-          background: rgba(124,58,237,0.2);
-          border: 1px solid rgba(167,139,250,0.22);
+          background: rgba(217,119,6,0.2);
+          border: 1px solid rgba(245,158,11,0.22);
           display: flex; align-items: center; justify-content: center;
           font-family: var(--font-mono);
           font-size: 9px; font-weight: 500;
@@ -628,7 +618,7 @@ export default function Testimonials(): React.JSX.Element {
           margin-bottom: 20px;
         }
         .tv-bottom-text span {
-          background: linear-gradient(118deg, #c4b5fd 0%, #a78bfa 100%);
+          background: linear-gradient(118deg, #fcd34d 0%, #f59e0b 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
           background-clip: text;
         }
@@ -638,18 +628,18 @@ export default function Testimonials(): React.JSX.Element {
         .tv-btn-primary {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 11px 22px;
-          background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-          border-radius: 9px; color: #fff; border: none; cursor: pointer;
+          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          border-radius: 9px; color: #0a0800; border: none; cursor: pointer;
           font-family: var(--font-body);
-          font-size: 13px; font-weight: 600; letter-spacing: -0.01em;
+          font-size: 13px; font-weight: 700; letter-spacing: -0.01em;
           transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-          box-shadow: 0 0 22px rgba(124,58,237,0.38), 0 4px 14px rgba(0,0,0,0.25),
-                      inset 0 1px 0 rgba(255,255,255,0.18);
+          box-shadow: 0 0 22px rgba(217,119,6,0.38), 0 4px 14px rgba(0,0,0,0.25),
+                      inset 0 1px 0 rgba(255,255,255,0.22);
           text-decoration: none;
         }
         .tv-btn-primary:hover {
           transform: translateY(-2px) scale(1.01);
-          box-shadow: 0 0 40px rgba(124,58,237,0.58), 0 8px 20px rgba(0,0,0,0.35);
+          box-shadow: 0 0 40px rgba(245,158,11,0.58), 0 8px 20px rgba(0,0,0,0.35);
         }
         .tv-btn-primary svg { transition: transform 0.25s; }
         .tv-btn-primary:hover svg { transform: translateX(3px); }
@@ -657,8 +647,8 @@ export default function Testimonials(): React.JSX.Element {
         .tv-btn-ghost {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 11px 22px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.1);
+          background: rgba(245,158,11,0.03);
+          border: 1px solid rgba(245,158,11,0.15);
           border-radius: 9px; color: var(--text2); cursor: pointer;
           font-family: var(--font-body);
           font-size: 13px; font-weight: 500;
@@ -666,9 +656,9 @@ export default function Testimonials(): React.JSX.Element {
           text-decoration: none;
         }
         .tv-btn-ghost:hover {
-          border-color: rgba(167,139,250,0.3);
+          border-color: rgba(245,158,11,0.4);
           color: var(--accent3);
-          background: rgba(167,139,250,0.06);
+          background: rgba(245,158,11,0.08);
         }
 
         @keyframes tv-fadeUp {

@@ -28,70 +28,55 @@ export default function Contact(): React.JSX.Element {
 
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-
-    // Basic client-side guard
     if (!form.name || !form.email || !form.message) {
-      alert('Please fill in your name, email, and message.');
+      alert("Please fill in your name, email, and message.");
       return;
     }
-
     setSending(true);
-
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
       const data = await res.json();
-
       if (res.ok) {
         setSent(true);
       } else {
-        console.error('API response:', data); // ← add this
-        alert(typeof data.error === 'string' ? data.error : JSON.stringify(data.error));
-      }
-
-
-      if (res.ok) {
-        setSent(true);
-      } else {
-        alert(typeof data.error === 'string' ? data.error : 'Something went wrong. Please try again.');
+        console.error("API response:", data);
+        alert(typeof data.error === "string" ? data.error : JSON.stringify(data.error));
       }
     } catch {
-      alert('Network error. Please try again.');
+      alert("Network error. Please try again.");
     } finally {
       setSending(false);
     }
   };
-  const MAP_EMBED = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=Sanaka+Educational+Trust+Group+of+Institutions,Malandighi,Durgapur,West+Bengal&zoom=15`;
-
 
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:wght@600;700;800&family=DM+Mono:wght@400;500&display=swap');
 
-        /* ── tokens (mirror Hero exactly) ─────────────── */
+        /* ── tokens — mirrors Hero exactly ── */
         .c-root {
-          --bg: #08080f;
-          --bg2: #0d0d1c;
-          --accent: #a78bfa;
-          --accent2: #7c3aed;
-          --accent3: #c4b5fd;
-          --green: #22c55e;
-          --text: #f5f3ff;
-          --text2: rgba(245,243,255,0.55);
-          --text3: rgba(245,243,255,0.22);
-          --border: rgba(167,139,250,0.14);
-          --border2: rgba(255,255,255,0.06);
+          --bg:           #0a0800;
+          --bg2:          #110f00;
+          --accent:       #f59e0b;
+          --accent2:      #d97706;
+          --accent3:      #fcd34d;
+          --green:        #22c55e;
+          --text:         #fefce8;
+          --text2:        rgba(254,252,232,0.52);
+          --text3:        rgba(254,252,232,0.20);
+          --border:       rgba(245,158,11,0.14);
+          --border2:      rgba(255,255,255,0.06);
           --font-display: 'Bricolage Grotesque', sans-serif;
-          --font-body: 'Inter', sans-serif;
-          --font-mono: 'DM Mono', monospace;
+          --font-body:    'Inter', sans-serif;
+          --font-mono:    'DM Mono', monospace;
         }
 
-        /* ── section ─────────────────────────────────── */
+        /* ── section ── */
         .c-wrap {
           position: relative;
           min-height: 100vh;
@@ -102,12 +87,12 @@ export default function Contact(): React.JSX.Element {
           padding-top: 92px;
         }
 
-        /* ── background layers ───────────────────────── */
+        /* ── background layers ── */
         .c-bg-grid {
           position: absolute; inset: 0; pointer-events: none;
           background-image:
-            linear-gradient(rgba(167,139,250,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(167,139,250,0.08) 1px, transparent 1px);
+            linear-gradient(rgba(245,158,11,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245,158,11,0.06) 1px, transparent 1px);
           background-size: 56px 56px;
           mask-image: radial-gradient(ellipse 80% 70% at 50% 36%, black 5%, transparent 100%);
         }
@@ -117,7 +102,7 @@ export default function Contact(): React.JSX.Element {
           background-size: 256px 256px;
         }
 
-        /* ── glows ───────────────────────────────────── */
+        /* ── glows — amber palette ── */
         .c-glow {
           position: absolute; border-radius: 50%; pointer-events: none;
           will-change: transform;
@@ -125,21 +110,21 @@ export default function Contact(): React.JSX.Element {
         }
         .c-glow-1 {
           width: 700px; height: 700px;
-          background: radial-gradient(circle, rgba(124,58,237,0.13) 0%, transparent 65%);
+          background: radial-gradient(circle, rgba(217,119,6,0.14) 0%, transparent 65%);
           top: -240px; right: -140px;
         }
         .c-glow-2 {
           width: 480px; height: 480px;
-          background: radial-gradient(circle, rgba(196,181,253,0.07) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%);
           bottom: -120px; left: -80px;
         }
         .c-glow-3 {
           width: 300px; height: 300px;
-          background: radial-gradient(circle, rgba(167,139,250,0.05) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%);
           top: 42%; left: 36%;
         }
 
-        /* ── inner layout ─────────────────────────────── */
+        /* ── inner layout ── */
         .c-inner {
           position: relative; z-index: 2;
           max-width: 1240px; margin: 0 auto;
@@ -147,7 +132,7 @@ export default function Contact(): React.JSX.Element {
           width: 100%;
         }
 
-        /* ── section header ──────────────────────────── */
+        /* ── section header ── */
         .c-header {
           text-align: center;
           margin-bottom: 64px;
@@ -155,8 +140,8 @@ export default function Contact(): React.JSX.Element {
         }
         .c-badge {
           display: inline-flex; align-items: center; gap: 9px;
-          background: rgba(167,139,250,0.07);
-          border: 1px solid rgba(167,139,250,0.16);
+          background: rgba(245,158,11,0.07);
+          border: 1px solid rgba(245,158,11,0.18);
           border-radius: 100px;
           padding: 6px 16px 6px 11px;
           margin-bottom: 24px;
@@ -164,17 +149,17 @@ export default function Contact(): React.JSX.Element {
         .c-badge-dot {
           width: 6px; height: 6px; border-radius: 50%;
           background: var(--accent);
-          box-shadow: 0 0 8px rgba(167,139,250,0.9);
+          box-shadow: 0 0 8px rgba(245,158,11,0.9);
           animation: c-glow-dot 2.2s ease-in-out infinite;
         }
         @keyframes c-glow-dot {
-          0%,100% { box-shadow: 0 0 5px rgba(167,139,250,0.7); }
-          50% { box-shadow: 0 0 14px rgba(167,139,250,1), 0 0 24px rgba(167,139,250,0.3); }
+          0%,100% { box-shadow: 0 0 5px rgba(245,158,11,0.7); }
+          50%      { box-shadow: 0 0 14px rgba(245,158,11,1), 0 0 24px rgba(245,158,11,0.3); }
         }
         .c-badge-txt {
           font-family: var(--font-mono);
           font-size: 10px; letter-spacing: 0.08em;
-          color: rgba(167,139,250,0.75);
+          color: rgba(245,158,11,0.75);
         }
         .c-title {
           font-family: var(--font-display);
@@ -184,9 +169,9 @@ export default function Contact(): React.JSX.Element {
           line-height: 1.1;
           margin-bottom: 14px;
         }
-        .c-title-dim { color: rgba(226,234,245,0.2); font-weight: 600; }
+        .c-title-dim  { color: rgba(254,252,232,0.2); font-weight: 600; }
         .c-title-grad {
-          background: linear-gradient(118deg, #c4b5fd 0%, #a78bfa 50%, #7c3aed 100%);
+          background: linear-gradient(118deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
           background-clip: text;
         }
@@ -196,7 +181,7 @@ export default function Contact(): React.JSX.Element {
           line-height: 1.8; max-width: 560px; margin: 0 auto;
         }
 
-        /* ── two-column grid ──────────────────────────── */
+        /* ── two-column grid ── */
         .c-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -204,7 +189,7 @@ export default function Contact(): React.JSX.Element {
           align-items: start;
         }
 
-        /* ── left: info + map ─────────────────────────── */
+        /* ── left: info + map ── */
         .c-left {
           display: flex; flex-direction: column; gap: 24px;
           animation: c-fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both;
@@ -226,7 +211,7 @@ export default function Contact(): React.JSX.Element {
           border-top: 1.5px solid var(--accent);
           border-left: 1.5px solid var(--accent);
           border-radius: 20px 0 0 0;
-          opacity: 0.65;
+          opacity: 0.7;
         }
         .c-info-title {
           font-family: var(--font-display);
@@ -236,7 +221,6 @@ export default function Contact(): React.JSX.Element {
           text-transform: uppercase;
           margin-bottom: 20px;
         }
-
         .c-info-item {
           display: flex; align-items: flex-start; gap: 14px;
           padding: 14px 0;
@@ -245,8 +229,8 @@ export default function Contact(): React.JSX.Element {
         .c-info-item:last-child { border-bottom: none; padding-bottom: 0; }
         .c-info-icon {
           width: 36px; height: 36px;
-          background: rgba(167,139,250,0.08);
-          border: 1px solid rgba(167,139,250,0.16);
+          background: rgba(245,158,11,0.08);
+          border: 1px solid rgba(245,158,11,0.18);
           border-radius: 10px;
           display: flex; align-items: center; justify-content: center;
           flex-shrink: 0;
@@ -286,7 +270,7 @@ export default function Contact(): React.JSX.Element {
         }
         @keyframes c-glow-g {
           0%,100% { box-shadow: 0 0 5px rgba(52,211,153,0.7); }
-          50% { box-shadow: 0 0 14px rgba(52,211,153,1), 0 0 22px rgba(52,211,153,0.35); }
+          50%      { box-shadow: 0 0 14px rgba(52,211,153,1), 0 0 22px rgba(52,211,153,0.35); }
         }
         .c-avail-txt {
           font-family: var(--font-mono);
@@ -315,14 +299,14 @@ export default function Contact(): React.JSX.Element {
           border-top: 1.5px solid var(--accent);
           border-left: 1.5px solid var(--accent);
           border-radius: 20px 0 0 0;
-          z-index: 2; opacity: 0.65;
+          z-index: 2; opacity: 0.7;
         }
         .c-map-wrap::after {
           content: '';
           position: absolute; bottom: -1px; right: -1px;
           width: 48px; height: 48px;
-          border-bottom: 1.5px solid rgba(124,58,237,0.4);
-          border-right: 1.5px solid rgba(124,58,237,0.4);
+          border-bottom: 1.5px solid rgba(217,119,6,0.4);
+          border-right: 1.5px solid rgba(217,119,6,0.4);
           border-radius: 0 0 20px 0;
           z-index: 2;
         }
@@ -333,21 +317,20 @@ export default function Contact(): React.JSX.Element {
         }
         .c-map-label {
           position: absolute; top: 14px; right: 14px; z-index: 3;
-          background: rgba(8,8,20,0.85);
-          border: 1px solid rgba(167,139,250,0.18);
+          background: rgba(10,8,0,0.85);
+          border: 1px solid rgba(245,158,11,0.2);
           border-radius: 10px;
           padding: 6px 12px;
           backdrop-filter: blur(16px);
           font-family: var(--font-mono);
           font-size: 9px; letter-spacing: 0.08em;
-          color: rgba(167,139,250,0.7);
+          color: rgba(245,158,11,0.7);
         }
 
-        /* ── right: form ──────────────────────────────── */
+        /* ── right: form ── */
         .c-right {
           animation: c-fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both;
         }
-
         .c-form-card {
           background: var(--bg2);
           border: 1px solid var(--border);
@@ -363,17 +346,16 @@ export default function Contact(): React.JSX.Element {
           border-top: 1.5px solid var(--accent);
           border-left: 1.5px solid var(--accent);
           border-radius: 20px 0 0 0;
-          opacity: 0.65;
+          opacity: 0.7;
         }
         .c-form-card::after {
           content: '';
           position: absolute; bottom: -1px; right: -1px;
           width: 56px; height: 56px;
-          border-bottom: 1.5px solid rgba(124,58,237,0.4);
-          border-right: 1.5px solid rgba(124,58,237,0.4);
+          border-bottom: 1.5px solid rgba(217,119,6,0.4);
+          border-right: 1.5px solid rgba(217,119,6,0.4);
           border-radius: 0 0 20px 0;
         }
-
         .c-form-title {
           font-family: var(--font-display);
           font-size: 22px; font-weight: 700;
@@ -414,23 +396,23 @@ export default function Contact(): React.JSX.Element {
           box-sizing: border-box;
         }
         .c-input::placeholder, .c-textarea::placeholder {
-          color: rgba(245,243,255,0.18);
+          color: rgba(254,252,232,0.18);
         }
         .c-input:focus, .c-select:focus, .c-textarea:focus {
-          border-color: rgba(167,139,250,0.45);
-          background: rgba(167,139,250,0.04);
-          box-shadow: 0 0 0 3px rgba(167,139,250,0.08);
+          border-color: rgba(245,158,11,0.45);
+          background: rgba(245,158,11,0.04);
+          box-shadow: 0 0 0 3px rgba(245,158,11,0.08);
         }
         .c-select {
           appearance: none;
           -webkit-appearance: none;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(167,139,250,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(245,158,11,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
           background-repeat: no-repeat;
           background-position: right 14px center;
           cursor: pointer;
-          color: rgba(245,243,255,0.5);
+          color: rgba(254,252,232,0.5);
         }
-        .c-select option { background: #0d0d1c; color: var(--text); }
+        .c-select option { background: #110f00; color: var(--text); }
         .c-textarea { resize: vertical; min-height: 110px; line-height: 1.7; }
 
         /* submit */
@@ -439,19 +421,19 @@ export default function Contact(): React.JSX.Element {
           width: 100%;
           display: inline-flex; align-items: center; justify-content: center; gap: 10px;
           padding: 14px 30px;
-          background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-          border-radius: 10px; color: #fff; border: none; cursor: pointer;
+          background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+          border-radius: 10px; color: #0a0800; border: none; cursor: pointer;
           font-family: var(--font-body);
-          font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+          font-size: 14px; font-weight: 700; letter-spacing: -0.01em;
           transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-          box-shadow: 0 0 28px rgba(124,58,237,0.38), 0 4px 16px rgba(0,0,0,0.25),
-                      inset 0 1px 0 rgba(255,255,255,0.18);
+          box-shadow: 0 0 28px rgba(217,119,6,0.4), 0 4px 16px rgba(0,0,0,0.3),
+                      inset 0 1px 0 rgba(255,255,255,0.22);
           position: relative; overflow: hidden;
         }
         .c-btn-submit:hover:not(:disabled) {
           transform: translateY(-2px) scale(1.01);
-          box-shadow: 0 0 48px rgba(124,58,237,0.58), 0 8px 24px rgba(0,0,0,0.35),
-                      inset 0 1px 0 rgba(255,255,255,0.2);
+          box-shadow: 0 0 48px rgba(245,158,11,0.6), 0 8px 24px rgba(0,0,0,0.4),
+                      inset 0 1px 0 rgba(255,255,255,0.25);
         }
         .c-btn-submit:active:not(:disabled) { transform: translateY(0) scale(0.99); }
         .c-btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
@@ -461,8 +443,8 @@ export default function Contact(): React.JSX.Element {
         /* spinner */
         .c-spinner {
           width: 16px; height: 16px;
-          border: 2px solid rgba(255,255,255,0.25);
-          border-top-color: #fff;
+          border: 2px solid rgba(10,8,0,0.25);
+          border-top-color: #0a0800;
           border-radius: 50%;
           animation: c-spin 0.7s linear infinite;
         }
@@ -484,7 +466,7 @@ export default function Contact(): React.JSX.Element {
         }
         @keyframes c-pop {
           from { transform: scale(0.6); opacity: 0; }
-          to { transform: scale(1); opacity: 1; }
+          to   { transform: scale(1);   opacity: 1; }
         }
         .c-success-title {
           font-family: var(--font-display);
@@ -497,7 +479,7 @@ export default function Contact(): React.JSX.Element {
           font-size: 14px; color: var(--text2); line-height: 1.7;
         }
 
-        /* social pills at the bottom of form */
+        /* social pills */
         .c-socials {
           display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap;
         }
@@ -513,9 +495,9 @@ export default function Contact(): React.JSX.Element {
           transition: all 0.25s;
         }
         .c-social-pill:hover {
-          border-color: rgba(167,139,250,0.3);
+          border-color: rgba(245,158,11,0.3);
           color: var(--accent3);
-          background: rgba(167,139,250,0.06);
+          background: rgba(245,158,11,0.06);
         }
 
         @keyframes c-fadeUp {
@@ -525,9 +507,9 @@ export default function Contact(): React.JSX.Element {
 
         /* responsive */
         @media (max-width: 900px) {
-          .c-grid { grid-template-columns: 1fr; }
-          .c-inner { padding: 44px 24px 80px; }
-          .c-field-row { grid-template-columns: 1fr; }
+          .c-grid       { grid-template-columns: 1fr; }
+          .c-inner      { padding: 44px 24px 80px; }
+          .c-field-row  { grid-template-columns: 1fr; }
         }
         @media (max-width: 500px) {
           .c-form-card { padding: 24px 18px; }
@@ -550,7 +532,7 @@ export default function Contact(): React.JSX.Element {
           <div className="c-header">
             <div className="c-badge">
               <span className="c-badge-dot" />
-              <span className="c-badge-txt">// Let's build something great</span>
+              <span className="c-badge-txt">// Let&apos;s build something great</span>
             </div>
             <h2 className="c-title">
               <span className="c-title-dim">Have a question? </span>
@@ -561,13 +543,11 @@ export default function Contact(): React.JSX.Element {
             </p>
           </div>
 
-          {/* ── Two column grid ── */}
+          {/* ── Two-column grid ── */}
           <div className="c-grid">
 
             {/* ── LEFT: info + map ── */}
             <div className="c-left">
-
-              {/* Info card */}
               <div className="c-info-card">
                 <div className="c-info-title">// Contact info</div>
 
@@ -581,7 +561,7 @@ export default function Contact(): React.JSX.Element {
                   <div>
                     <div className="c-info-label">Address</div>
                     <div className="c-info-val">
-                      Near Sanaka Educational Trust's Group of Institutions,<br />
+                      Near Sanaka Educational Trust&apos;s Group of Institutions,<br />
                       Malandighi, Durgapur – 713212,<br />
                       West Bengal, India
                     </div>
@@ -616,11 +596,11 @@ export default function Contact(): React.JSX.Element {
                   </div>
                 </div>
 
-                {/* availability strip */}
+                {/* Availability */}
                 <div className="c-avail">
                   <span className="c-green-dot" />
                   <span className="c-avail-txt">// Currently open to new projects</span>
-                  <span className="c-avail-sub">2025</span>
+                  <span className="c-avail-sub">2026</span>
                 </div>
               </div>
 
@@ -640,7 +620,6 @@ export default function Contact(): React.JSX.Element {
             {/* ── RIGHT: form ── */}
             <div className="c-right">
               <div className="c-form-card">
-
                 {sent ? (
                   <div className="c-success">
                     <div className="c-success-icon">
@@ -650,7 +629,7 @@ export default function Contact(): React.JSX.Element {
                     </div>
                     <div className="c-success-title">Message sent!</div>
                     <p className="c-success-msg">
-                      Thanks for reaching out. We'll get back to you within 24 hours — sit tight.
+                      Thanks for reaching out. We&apos;ll get back to you within 24 hours — sit tight.
                     </p>
                   </div>
                 ) : (
@@ -661,38 +640,18 @@ export default function Contact(): React.JSX.Element {
                     <div className="c-field-row">
                       <div className="c-field">
                         <label className="c-label">Full name</label>
-                        <input
-                          className="c-input"
-                          name="name"
-                          placeholder="Your Name"
-                          value={form.name}
-                          onChange={handleChange}
-                        />
+                        <input className="c-input" name="name" placeholder="Your Name" value={form.name} onChange={handleChange} />
                       </div>
                       <div className="c-field">
                         <label className="c-label">Email</label>
-                        <input
-                          className="c-input"
-                          name="email"
-                          type="email"
-                          placeholder="you@email.com"
-                          value={form.email}
-                          onChange={handleChange}
-                        />
+                        <input className="c-input" name="email" type="email" placeholder="you@email.com" value={form.email} onChange={handleChange} />
                       </div>
                     </div>
 
                     <div className="c-field-row">
                       <div className="c-field">
                         <label className="c-label">Phone</label>
-                        <input
-                          className="c-input"
-                          name="phone"
-                          type="tel"
-                          placeholder="+91 XXXXX XXXXX"
-                          value={form.phone}
-                          onChange={handleChange}
-                        />
+                        <input className="c-input" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" value={form.phone} onChange={handleChange} />
                       </div>
                       <div className="c-field">
                         <label className="c-label">Service needed</label>
@@ -709,26 +668,13 @@ export default function Contact(): React.JSX.Element {
 
                     <div className="c-field">
                       <label className="c-label">Your message</label>
-                      <textarea
-                        className="c-textarea"
-                        name="message"
-                        placeholder="Tell us about your project, goals, timeline…"
-                        value={form.message}
-                        onChange={handleChange}
-                      />
+                      <textarea className="c-textarea" name="message" placeholder="Tell us about your project, goals, timeline…" value={form.message} onChange={handleChange} />
                     </div>
 
                     <div className="c-submit-wrap">
-                      <button
-                        className="c-btn-submit"
-                        disabled={sending}
-                        onClick={handleSubmit}
-                      >
+                      <button className="c-btn-submit" disabled={sending} onClick={handleSubmit}>
                         {sending ? (
-                          <>
-                            <span className="c-spinner" />
-                            Sending…
-                          </>
+                          <><span className="c-spinner" />Sending…</>
                         ) : (
                           <>
                             Send Message
